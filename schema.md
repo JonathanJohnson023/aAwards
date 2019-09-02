@@ -91,7 +91,7 @@ column name | data type | details
             1: {
                 title: 'aAwards',
                 url: 'www.aAwards.com',
-                description: "a clone of awwwards.com" ,
+                description: "a clone of AAwards.com" ,
                 img_url: null,
                 user_id: 1,
                 score_avg: 9.8 
