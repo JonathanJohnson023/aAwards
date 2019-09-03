@@ -4,14 +4,14 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: "",
+            email: "",
             password: ""
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleInput(type) {
+    update(type) {
         return (e) => {
             this.setState({ [type]: e.target.value });
         };
@@ -24,16 +24,15 @@ class SessionForm extends React.Component {
     }
 
     render() {
-
         return (
           <div className="session-form">
             <h2>{this.props.formtype}</h2>
             <form>
-              <label>Username:
+              <label>Email:
               <input
                 type="text"
-                value={this.state.username}
-                onChange={this.handleInput('username')}
+                value={this.state.email}
+                onChange={this.update('email')}
               />
               </label>
     
@@ -41,7 +40,7 @@ class SessionForm extends React.Component {
               <input
                 type="password"
                 value={this.state.password}
-                onChange={this.handleInput('password')}
+                onChange={this.update('password')}
               />
                 <button onClick={this.handleSubmit}>{this.props.formtype}</button>
               </label>
