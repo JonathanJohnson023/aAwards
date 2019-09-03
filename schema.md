@@ -242,19 +242,19 @@ The following routes, defined in App, will render components between NavBar and 
   * SessionForm
 * /signup
   * UserForm
-* /Winners
+* /winners
   * WebsiteIndex
     * WebsiteIndexItem // WebsiteShow
 * /users/:userId
   * ProfilePage
   * CollectionsIndex
     * WebsiteIndexItem // WebsiteShow
-* /Jobs/new
-  * JobForm
-* /Jobs/:JobId
-  * JobShow
-* /Jobs/:JobId/edit
-  * JobForm
+* /jobs/new
+  * jobForm
+* /jobs/:jobId
+  * jobShow
+* /jobs/:jobId/edit
+  * jobForm
 
 
 
