@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default ({ currentUser, signout }) => {
-    const display = currentUser ? (
+export default ({ user, logout }) => {
+    const display = user ? (
         <div>
-            <h1>Welcome, {currentUser.username}</h1>
-            <button onClick={signout}>Logout</button>
+            <h1>Welcome, {user.username}</h1>
+            <button onClick={logout}>Logout</button>
         </div>
     ) : (
        <div>
