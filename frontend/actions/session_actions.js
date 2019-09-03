@@ -31,6 +31,6 @@ export const logout = () => dispatch => (
   ))  
 );
 
-// window.signup = signup;
-// window.login = login;
-// window.logout = logout;
+window.signup = signup;
+window.login = login;
+window.logout = logout;
