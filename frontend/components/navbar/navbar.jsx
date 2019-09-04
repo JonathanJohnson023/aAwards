@@ -5,7 +5,7 @@ export default ({ user, logout }) => {
   let display;
   if (user) {
     display = {
-            link1: <span>{user.username ? `Welcome, ${user.username}` : user.email }</span>,
+            link1: <span className="username/email">{user.username ? `Welcome, ${user.username}` : user.email }</span>,
             link2: <button onClick={logout}>Logout</button>
     }
    } else{ 
@@ -17,8 +17,8 @@ export default ({ user, logout }) => {
 
     return (
       <div>
-         {display.link1}    
-         {display.link2}    
+         <div className="link1">{display.link1}</div>
+         <div className="link2">{display.link2}</div>
       </div>
     )
 } 

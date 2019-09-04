@@ -27,23 +27,24 @@ class SessionForm extends React.Component {
         return (
           <div className="session-form">
             <h2>{this.props.formtype}</h2>
-            <form>
+            <form onSubmit={this.handleSubmit} autoComplete="on">
               <label>Email:
               <input
                 type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
+                className="session-input"
               />
               </label>
-    
+
               <label>Password:
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
+              <input type="password" 
+                value={this.state.password} 
+                onChange={this.update('password')} 
+                className="session-input"
               />
-                <button onClick={this.handleSubmit}>{this.props.formtype}</button>
               </label>
+              <input className="session-submit" type="submit" value={this.props.formType} />
             </form>
           </div>
         );
