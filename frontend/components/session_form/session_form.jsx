@@ -28,7 +28,9 @@ class SessionForm extends React.Component {
           <div className="modal open">
             <h2>{this.props.formtype}</h2>
             <form className="modal-session-form" onSubmit={this.handleSubmit}>
-              <span class="modal-close js-modal-close">&times;</span>
+              <span 
+              className="modal-close js-modal-close" 
+              onClick={this.props.closeModal}>&times;</span>
 
               <label>Email:
               <input
@@ -48,7 +50,7 @@ class SessionForm extends React.Component {
               </label>
               <input className="session-submit" type="submit" value={this.props.formType} />
             </form>
-              <div class="modal-screen js-modal-close"></div>
+              <div className="modal-screen js-modal-close"></div>
           </div>
         );
     }

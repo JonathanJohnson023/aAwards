@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default ({ user, logout }) => {
+export default ({ user, logout, openModal }) => {
   let display;
   if (user) {
     display = {
@@ -10,20 +10,36 @@ export default ({ user, logout }) => {
     }
    } else{ 
      display = {
-         link1: <Link className="btn" to="/signup" >Signup</Link>,
-         link2: <Link className="btn" to="/login" >Login</Link>
+         link1: <button className="btn" onClick={()=> openModal('signup')}>Signup</button>,
+         link2: <button className="btn" onClick={()=> openModal('login')}>Login</button>
      }
     }
 
     return (
       <div className="navbar">
+        <div className="west-side">
+          <div className="item menu">
+             
+          </div>
+        </div>
+
         <div className="east-side">
-          <div className="the-righters">
           <Link to="/" className="logo-link">
             <img className="the-logo" src="/assets/take2-of-logo.png"/>
           </Link>
-            <div className="link1">{display.link1}</div>
-            <div className="link2">{display.link2}</div>
+
+          <div className="the-righters">
+            <div className="item serch">
+
+            </div>
+            <div className="user-stuff">
+              <div className="link1">{display.link1}</div>
+              <div className="link2">{display.link2}</div>
+            </div>
+            <div> 
+              
+            </div>
+
           </div>
         </div>
       </div>
