@@ -5,7 +5,7 @@ export default ({ user, logout }) => {
   let display;
   if (user) {
     display = {
-            link1: <span className="username/email">{user.username ? `Welcome, ${user.username}` : user.email }</span>,
+            link1: <Link to={`/api/user/${user.id}`}><span className="username/email">{user.username ? `Welcome, ${user.username}` : user.email }</span></Link>,
             link2: <button onClick={logout}>Logout</button>
     }
    } else{ 
@@ -16,9 +16,16 @@ export default ({ user, logout }) => {
     }
 
     return (
-      <div>
-         <div className="link1">{display.link1}</div>
-         <div className="link2">{display.link2}</div>
+      <div className="navbar">
+        <div className="east-side">
+          <div className="the-righters">
+          <Link to="/" className="logo-link">
+            <img className="the-logo" src="/assets/take2-of-logo.png"/>
+          </Link>
+            <div className="link1">{display.link1}</div>
+            <div className="link2">{display.link2}</div>
+          </div>
+        </div>
       </div>
     )
 } 

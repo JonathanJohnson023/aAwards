@@ -15,9 +15,6 @@ import {AuthRoute} from '../util/route_util'
 const App = () =>(
   <div>
     <header>
-      <Link to="/" className="header-link">
-        <h2>a/Awards</h2>
-      </Link>
         <NavBarContainer />
     </header>
     <Switch>
