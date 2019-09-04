@@ -21,6 +21,7 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+        this.props.closeModal()
     }
 
     render() {
@@ -50,7 +51,6 @@ class SessionForm extends React.Component {
               </label>
               <input className="session-submit" type="submit" value={this.props.formType} />
             </form>
-              <div className="modal-screen js-modal-close"></div>
           </div>
         );
     }
