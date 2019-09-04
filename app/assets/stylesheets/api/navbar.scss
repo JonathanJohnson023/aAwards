@@ -10,10 +10,6 @@ header{
   background-color: #f4f7f6;
 }
 
-div{
-  display: block
-}
-
 .navbar{
   position: relative;
   display: flex;
@@ -23,9 +19,9 @@ div{
 
 .logo-link{
   display: block;
-  position: absolute;
-  top: 21px;
   left: 50%;
+  top: 21px;
+  position: absolute;
   width: auto;
   height: 23px;
   line-height: normal;
@@ -33,17 +29,71 @@ div{
 }
 
 .the-logo{
-  width: 100px
+  width: 100px;
 
 }
 .east-side{
   display: flex;
   justify-content: flex-end;
+  width: 90%;
+}
+
+.the-righters{
+  display: flex;
+  justify-content: flex-end;
   flex: 1;
+  width: 80%;
 }
 
-.the-links{
-  display: flex
+.west-side{
+  width: 10%
 }
 
+.item.serch{
+  width: 10%;
+  height: 100%;
+  float: left;
+  display: flex;
+  justify-content: flex-start;
+}
 
+.user-stuff{
+  height: 100%;
+  flex: 1;
+  justify-content: flex-end;
+  display: flex;
+
+}
+.user-stuff > ul {
+  justify-content: flex-end;
+}
+
+.username-email{
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  width: 20%;
+}
+
+.username-email > li{
+  margin: auto;
+}
+
+.submit-btn{
+  display: flex;
+  justify-content: flex-end;
+  width: 200px;
+  height: 100%;
+  background-color: #49c5b6;
+}
+
+.submit-btn-text{
+  justify-content: center;
+  display: flex;
+  margin: auto;
+}
+
+.user-page{
+  text-decoration: none;
+  color: black;
+}

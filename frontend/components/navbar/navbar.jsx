@@ -5,13 +5,13 @@ export default ({ user, logout, openModal }) => {
   let display;
   if (user) {
     display = {
-            link1: <Link to={`/api/user/${user.id}`}><span className="username/email">{user.username ? `Welcome, ${user.username}` : user.email }</span></Link>,
-            link2: <button onClick={logout}>Logout</button>
+            link1: <Link className="user-page" to={`/api/user/${user.id}`}><span >{user.username ? `Welcome, ${user.username}` : user.email }</span></Link>,
+            link2: <a onClick={logout}>Logout</a>
     }
    } else{ 
      display = {
-         link1: <button className="btn" onClick={()=> openModal('signup')}>Signup</button>,
-         link2: <button className="btn" onClick={()=> openModal('login')}>Login</button>
+         link1: <a className="btn" onClick={()=> openModal('signup')}>Signup</a>,
+         link2: <a className="btn" onClick={()=> openModal('login')}>Login</a>
      }
     }
 
@@ -33,13 +33,14 @@ export default ({ user, logout, openModal }) => {
 
             </div>
             <div className="user-stuff">
-              <div className="link1">{display.link1}</div>
-              <div className="link2">{display.link2}</div>
+              <ul className="username-email">
+                <li className="link1">{display.link1}</li>
+                <li className="link2">{display.link2}</li>
+              </ul>
+              <div className="submit-btn">
+                <h2 className="submit-btn-text">Submit Your Site</h2>
+              </div>
             </div>
-            <div> 
-              
-            </div>
-
           </div>
         </div>
       </div>
