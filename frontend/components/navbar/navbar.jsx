@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default ({ user, logout, openModal }) => {
+export default ({ user, logout, openModal, openSideNav }) => {
   let display;
   if (user) {
     display = {
@@ -17,10 +17,11 @@ export default ({ user, logout, openModal }) => {
 
     return (
       <div className="navbar">
-        <div className="west-side">
+        <div className="west-side" >
           <div className="item menu">
             <i className="fas fa-bars"></i>
             <span className="icon-text">Menu</span>
+
           </div>
         </div>
 
