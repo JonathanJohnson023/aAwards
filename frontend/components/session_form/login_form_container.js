@@ -3,12 +3,15 @@ import { connect } from "react-redux";
 import SessionForm from "./session_form";
 import {login} from "../../actions/session_actions";
 import { openModal, closeModal } from '../../actions/modal_actions';
+import {clearErrors} from "../../actions/session_actions";
 
-const mapStateToProps = (state, ownProps) => ({
-    errors: state.errors.session,
-    formtype: "Sign in to continue",
-    buttontype: 'LogIn'
-});
+const mapStateToProps = ({errors}) => {
+    return{
+        errors: errors.session,
+        formtype: "Sign in to continue",
+        buttontype: 'LogIn'
+    }
+};
 
 
 
@@ -20,6 +23,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
         onClick={() => dispatch(openModal('signup'))}> Register now
         </a></span>
     ),
+    clearErrors: () => dispatch(clearErrors()),
     closeModal: () => dispatch(closeModal())
 });
 

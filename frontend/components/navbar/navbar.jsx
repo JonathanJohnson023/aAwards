@@ -19,7 +19,8 @@ export default ({ user, logout, openModal }) => {
       <div className="navbar">
         <div className="west-side">
           <div className="item menu">
-             
+            <i className="fas fa-bars"></i>
+            <span className="icon-text">Menu</span>
           </div>
         </div>
 
@@ -30,7 +31,7 @@ export default ({ user, logout, openModal }) => {
 
           <div className="the-righters">
             <div className="item serch">
-
+              <i className="fas fa-search"></i>
             </div>
             <div className="user-stuff">
               <ul className="username-email">

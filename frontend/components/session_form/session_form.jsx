@@ -7,8 +7,9 @@ class SessionForm extends React.Component {
         email: "",
         password: ""
     };
-
+    
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoUser = this.demoUser.bind(this);
   }
 
   renderErrors() {
@@ -35,19 +36,25 @@ class SessionForm extends React.Component {
       this.props.processForm(user).then(() =>{
         if(this.props.errors.length > 0){
           return;
-        }else {
-          this.props.closeModal;
+        } else {
+          this.props.closeModal();
         }
       });
   };
 
-  // componentWillUnmount(){
-  //   this.props.clearErrors
-  // }
+  demoUser(e) {
+    e.preventDefault();
+    const guest = {email: "test@user.com", username:"User", password: "hunter12"}
+    this.props.processForm(guest).then(this.props.closeModal)
+  };
+
+  componentWillUnmount(){
+    this.props.clearErrors()
+  } 
 
   render() {
     return (
-      // <div className="modal open">
+      <div className="modal open">
         <form className="modal-session-form" onSubmit={this.handleSubmit}>
           <div className="modal-header">
             <h2>{this.props.formtype}</h2>
@@ -77,10 +84,17 @@ class SessionForm extends React.Component {
             type="submit" 
             value={this.props.buttontype}
             />
+            {this.props.formtype === "Sign in to continue" ? 
+            <input className="demo-user"
+              type="submit" 
+              onClick={this.demoUser}
+              value="Demo User"
+              /> 
+            : ""}
           </div>
           {this.renderErrors()}
         </form>
-      // </div>
+     </div>
     );
   }
 }

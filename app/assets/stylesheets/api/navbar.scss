@@ -40,7 +40,7 @@ a:hover {
 .east-side{
   display: flex;
   justify-content: flex-end;
-  width: 90%;
+  width: 92%;
 }
 
 .the-righters{
@@ -51,15 +51,35 @@ a:hover {
 }
 
 .west-side{
-  width: 10%
+  width: 8%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #E6EAEA;
+  transition: all 0.3s ease-in-out;
+}
+
+.west-side:hover{
+  color: #64686A;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.fas.fa-bars{
+  margin-right: 13px;
 }
 
 .item.serch{
-  width: 10%;
+  width: 5%;
   height: 100%;
   float: left;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center
+}
+
+.item.serch:hover{
+  cursor: pointer;
 }
 
 .user-stuff{
@@ -91,7 +111,6 @@ a:hover {
   background-color: #49c5b6;
   color: white; 
   transition: all 0.3s ease-in-out;
-
 }
 
 .submit-btn:hover{
@@ -110,3 +129,4 @@ a:hover {
   text-decoration: none;
   color: black;
 }
+
