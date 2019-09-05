@@ -2,12 +2,17 @@
   display: none;
 }
 
+.modal-child{
+  height: 100%;
+}
+
 .modal.open {
   display: block;
+  height: inherit;
 }
 
 .modal-background {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -17,19 +22,18 @@
   left: 0;
   right: 0;
   z-index: 2;
-  transition: all 3s;
+  transition: all 0.3s;
 }
 
 .modal-session-form {
   display: flex;
-  position: absolute;
+  position: relative;
   flex-direction: column;
   top: 100px;
-  left: 50%;
-  margin-left: -220px;
-  width: 40%;
-  height: 60%;
-  padding: 20px;
+  margin: auto;
+  width: 600px;
+  height: 55%;
+  padding: 50px;
   background-color: #ffffff;
   z-index: 5;
   border-radius: 5px;

@@ -9,6 +9,7 @@ const mapStateToProps = (state) =>({
 })
 
 const mapDispatchToProps = (dispatch) =>({ 
+  openSideNav: () => dispatch(openModal("navbar")),
   openModal: modal => dispatch(openModal(modal)),
   logout: () => dispatch(logout())
 })

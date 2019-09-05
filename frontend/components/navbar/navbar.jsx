@@ -17,7 +17,7 @@ export default ({ user, logout, openModal, openSideNav }) => {
 
     return (
       <div className="navbar">
-        <div className="west-side" >
+        <div className="west-side" onClick={openSideNav}>
           <div className="item menu">
             <i className="fas fa-bars"></i>
             <span className="icon-text">Menu</span>

@@ -1,0 +1,25 @@
+.side-nav-background{
+  display: flex;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  transition: all 0.3s;
+}
+
+.side-nav-child{
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #f4f7f6;
+}
+
+.full-side{
+  z-index: 5;
+  left: 0px;
+  height: 100%;
+  background: #f4f7f6;
+} 
