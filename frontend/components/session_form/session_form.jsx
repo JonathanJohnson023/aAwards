@@ -11,6 +11,18 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  renderErrors() {
+    return(
+      <ul className="errors-ul">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   update(type) {
       return (e) => {
           this.setState({ [type]: e.target.value });
@@ -20,9 +32,18 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
       e.preventDefault();
       const user = Object.assign({}, this.state);
-      this.props.processForm(user);
-      this.props.closeModal()
-  }
+      this.props.processForm(user).then(() =>{
+        if(this.props.errors.length > 0){
+          return;
+        }else {
+          this.props.closeModal;
+        }
+      });
+  };
+
+  // componentWillUnmount(){
+  //   this.props.clearErrors
+  // }
 
   render() {
     return (
@@ -57,6 +78,7 @@ class SessionForm extends React.Component {
             value={this.props.buttontype}
             />
           </div>
+          {this.renderErrors()}
         </form>
       // </div>
     );
