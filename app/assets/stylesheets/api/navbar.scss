@@ -10,6 +10,11 @@ header{
   background-color: #f4f7f6;
 }
 
+a:hover {
+  color: #f00;
+  cursor: pointer;
+}
+
 .navbar{
   position: relative;
   display: flex;
@@ -84,6 +89,15 @@ header{
   width: 200px;
   height: 100%;
   background-color: #49c5b6;
+  color: white; 
+  transition: all 0.3s ease-in-out;
+
+}
+
+.submit-btn:hover{
+  transition: all 0.3s ease-in-out;
+  background-color: #42AB9E;
+  cursor: pointer;
 }
 
 .submit-btn-text{

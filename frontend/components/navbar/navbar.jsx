@@ -38,7 +38,7 @@ export default ({ user, logout, openModal }) => {
                 <li className="link2">{display.link2}</li>
               </ul>
               <div className="submit-btn">
-                <h2 className="submit-btn-text">Submit Your Site</h2>
+                <h2 className="submit-btn-text">SUBMIT YOUR SITE!</h2>
               </div>
             </div>
           </div>

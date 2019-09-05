@@ -7,6 +7,9 @@
 }
 
 .modal-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   background: rgba(0, 0, 0, 0.7);
   top: 0;
@@ -14,22 +17,25 @@
   left: 0;
   right: 0;
   z-index: 2;
+  transition: all 3s;
 }
 
 .modal-session-form {
-  display: grid;
+  display: flex;
   position: absolute;
+  flex-direction: column;
   top: 100px;
   left: 50%;
   margin-left: -220px;
-  width: 360px;
-  height: 100px;
+  width: 40%;
+  height: 60%;
   padding: 20px;
   background-color: #ffffff;
   z-index: 5;
   border-radius: 5px;
   border: 1px solid #000;
 }
+
 
 .modal-close {
   position: absolute;
@@ -45,11 +51,57 @@
 }
 
 .modal-session-form > h2 {
-  font-size: 36px;
+  font-size: 21px;
   line-height: 1;
   font-weight: 300;
+  z-index: 5;
 }
 
-.modal-session-form > p {
-  margin: 0 0 20px 0;
+.modal-session-form {
+  font-weight: 600
+}
+
+.other-form-btn{
+  color: #49c5b6;
+}
+
+.modal-header{
+  padding-top: 55px;
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+}
+
+.input-fields{
+  display: flex;
+  flex-direction: column;
+}
+
+.input-fields > input{
+  margin-bottom: 40px;
+}
+
+.session-submit{
+  display: block;
+  height: 60px;
+  padding: 0 15px;
+  background-color: #49c5b6;
+  border: 1px solid #DBE0DF;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+
+.session-submit:hover{
+  transition: all 0.3s ease-in-out;
+  background-color: #42AB9E;
+  cursor: pointer;
+}
+
+.session-input {
+  display: block;
+  height: 60px;
+  padding: 0 15px;
+  background-color: #fff;
+  border: 1px solid #DBE0DF;
+  transition: all 0.3s ease-in-out;
 }
