@@ -32,7 +32,7 @@ class SessionForm extends React.Component {
               <span 
               className="modal-close js-modal-close" 
               onClick={this.props.closeModal}>&times;</span>
-
+                {this.props.otherForm}
               <label>Email:
               <input
                 type="text"
@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
                 className="session-input"
               />
               </label>
-              <input className="session-submit" type="submit" value={this.props.formType} />
+              <input className="session-submit" type="submit" value={this.props.formtype} />
             </form>
           </div>
         );
