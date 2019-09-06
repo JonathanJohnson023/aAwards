@@ -49,9 +49,9 @@ column name|data type| details
  `id`     | integer  | not null
  `title`  | string   | not null
  `url`    | string   | not null
- `description` | text | not null
+ `description` | text| not null
  `img_url` | string  | not null
- `user_id` | integer | not null
+ `author_id` | integer | not null
  `score_avg`| integer  | not null
 
 ## `Votes`

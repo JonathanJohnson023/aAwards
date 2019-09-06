@@ -48,6 +48,8 @@ class SessionForm extends React.Component {
     this.props.processForm(guest).then(this.props.closeModal)
   };
 
+  
+
   componentWillUnmount(){
     this.props.clearErrors()
   } 
@@ -68,7 +70,7 @@ class SessionForm extends React.Component {
 
           <div className="input-fields">
             <input className="session-input"
-              type="text"
+              type="email"
               value={this.state.email}
               onChange={this.update('email')}
               placeholder="Email"

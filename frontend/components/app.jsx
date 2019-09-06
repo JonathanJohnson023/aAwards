@@ -6,24 +6,23 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
-import NavBarContainer from "./navbar/navbar_container"
-import LogInFormContainer from "./session_form/login_form_container";
-import SignUpFormContainer from "./session_form/signup_form_container";
-import {AuthRoute} from '../util/route_util'
+import NavBarContainer from "./navbar/navbar_container";
 import Modal from "./modal/modal"
+import SideNavBar from './navbar/side_navbar';
 
 
 const App = () =>(
   <div>
-    <Modal />
-    <header>
-        <NavBarContainer />
-    </header>
-    <Switch>
-      {/* <AuthRoute exact path="/login" component={LogInFormContainer} />
-      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-       */}
-    </Switch>
+      <SideNavBar />
+      <div id="main">
+        <Modal />
+        <header>
+          <NavBarContainer />
+        </header>
+        <Switch>
+  
+        </Switch>
+    </div>
   </div>
 )
 
