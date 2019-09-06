@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+User.create([
+  {id: 777, email: "JonathanJohnson023@gmail.com", username: "Jonathan", password:"Nanakuli"},
+  {id: 7, email: "test@user.com", username:"User", password: "hunter12"},
+  {id: 2, email: "ivo@email.com", username:"ivo22", password: "password"}
+  ])
+
+  Website.create([
+    {title: "Picto-Gram", url:"https://picto-gram.herokuapp.com/#/", author_id: 2}
+  ])

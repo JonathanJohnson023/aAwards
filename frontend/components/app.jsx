@@ -20,7 +20,8 @@ const App = () =>(
           <NavBarContainer />
         </header>
         <Switch>
-  
+        {/* authroute for only people not logged in  */}
+        {/* protectedRoute for only USERS logged in  */}
         </Switch>
     </div>
   </div>
