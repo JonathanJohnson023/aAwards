@@ -10,7 +10,6 @@ export default (state = {}, action) => {
       // });
       return action.websites;
     case RECEIVE_WEBSITE:
-      debugger
       return Object.assign({}, state, { [action.website.id]: action.website });
     default:
       return state;
