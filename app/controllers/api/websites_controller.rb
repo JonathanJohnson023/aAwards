@@ -2,7 +2,6 @@ class Api::WebsitesController < ApplicationController
 
   def index
     @websites = Website.all
-    render :index
   end
   
   def show

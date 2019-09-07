@@ -1,22 +1,21 @@
-export const fetchWebsites = data => (
+export const fetchWebsites = () => (
   $.ajax({
     method: 'GET',
-    url: 'api/websites',
-    data
+    url: '/api/websites'
   })
 );
 
 export const fetchWebsite = id => (
   $.ajax({
     method: 'GET',
-    url: `api/websites/${id}`
+    url: `/api/websites/${id}`
   })
 );
 
 export const createVote = vote => (
   $.ajax({
     method: 'POST',
-    url: 'api/reviews',
+    url: '/api/votes',
     data: { vote }
   })
 );
@@ -24,7 +23,7 @@ export const createVote = vote => (
 export const createWebsite = websiteForm => (
   $.ajax({
     method: 'POST',
-    url: 'api/websites',
+    url: '/api/websites',
     data: websiteForm,
   })
 );

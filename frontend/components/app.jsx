@@ -9,6 +9,7 @@ import {
 import NavBarContainer from "./navbar/navbar_container";
 import Modal from "./modal/modal"
 import SideNavBar from './navbar/side_navbar';
+import WebsiteIndexContainer from './website/website_index_container';
 
 
 const App = () =>(
@@ -19,6 +20,7 @@ const App = () =>(
         <header>
           <NavBarContainer />
         </header>
+        <WebsiteIndexContainer />
         <Switch>
         {/* authroute for only people not logged in  */}
         {/* protectedRoute for only USERS logged in  */}

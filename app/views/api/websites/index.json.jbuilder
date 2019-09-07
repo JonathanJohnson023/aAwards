@@ -1,6 +1,5 @@
 @websites.each do |website|
   json.set! website.id do
-    json.partial! 'website', website: website
-    json.
+    json.partial! 'api/websites/website', website: website
   end
 end
