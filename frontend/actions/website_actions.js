@@ -20,6 +20,12 @@ export const fetchWebsites = () => dispatch => (
   ))
 );
 
+export const fetchTopWebsite = () => dispatch => (
+  APIUtil.fetchWebsites().then(website => (
+    dispatch(receiveWebsite(website))
+  ))
+);
+
 export const fetchWebsite = id => dispatch => (
   APIUtil.fetchWebsite(id).then(payload => (
     dispatch(receiveWebsite(payload))

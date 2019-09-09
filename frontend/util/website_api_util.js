@@ -27,3 +27,12 @@ export const createWebsite = websiteForm => (
     data: websiteForm,
   })
 );
+
+export const fetchTopWebsite = () => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/websites/top`
+  })
+);
+
+window.fetchTopWebsite = fetchTopWebsite

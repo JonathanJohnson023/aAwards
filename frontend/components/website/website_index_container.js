@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({
   websites: Object.values(state.entities.websites)
+  
 });
 
 const mapDispatchToProps = (dispatch) => ({

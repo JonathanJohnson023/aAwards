@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 export default ({website}) => {
   return (
     <li className="website-index-li">
-      <Link to={`/websites/${website.id}`}>
         <div className="the-meat-and">
-          <figure>
-            <img src="https://i.imgur.com/ZnNJLd8.jpg" className="website-index-img" />
+          <figure className="the-figures">
+          <Link to={`/websites/${website.id}`}>
+              <img src={website.img_url} className="website-index-img" />
+          </Link>
           </figure>
           <div className="website-index-info">
             <h1 className="website-title">{website.title}</h1>
@@ -20,7 +21,6 @@ export default ({website}) => {
             <h1>{website.author_id}</h1>
           </div>
         </div>
-      </Link>
     </li>
   );
 }

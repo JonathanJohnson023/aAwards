@@ -1,5 +1,9 @@
 class Api::WebsitesController < ApplicationController
 
+  def top
+    @website = Website.order("score_avg DESC").first
+  end
+
   def index
     @websites = Website.all
   end
