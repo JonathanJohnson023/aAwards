@@ -73,6 +73,15 @@ column name | data type | details
 ```js
  {
     entities: {
+        if(state.entities.user_vote[website.id])
+        user_vote: {
+            1:  {
+                    website_id: 1,
+                    voted: 
+                }
+                
+
+        }
         users: {
             1: {
                 id: 1,
