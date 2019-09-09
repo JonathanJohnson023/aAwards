@@ -10,7 +10,7 @@ import NavBarContainer from "./navbar/navbar_container";
 import Modal from "./modal/modal"
 import SideNavBar from './navbar/side_navbar';
 import WebsiteIndexContainer from './website/website_index_container';
-
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () =>(
   <div>
@@ -22,8 +22,9 @@ const App = () =>(
         </header>
         <WebsiteIndexContainer />
         <Switch>
-        {/* authroute for only people not logged in  */}
-        {/* protectedRoute for only USERS logged in  */}
+          {/* <ProtectedRoute exact path="/websites/new" component={WebsitesCreateContainer} /> */}
+          {/* <Route path="/websites/:websiteId" component={WebsiteShowContainer} />
+          <Route path="/" component={WebsiteIndexContainer} /> */}
         </Switch>
     </div>
   </div>

@@ -5,24 +5,38 @@ class ChirpIndex extends React.Component {
   constructor(props) {
     super(props);
   }
+  
+
 
   componentDidMount() {
-    this.props.fetchWebsites();
+    this.props.fetchWebsites().then(
+
+    )
   }
+
 
   render() {
     const { websites } = this.props;
+
     return (
       <div>
-        <ul>
-          <h1>AHHHHHHHHHHHHH</h1>
+        <div className="the-high-roller">
+          <div className="canvas" id="canvas"/>
+          <h1 className="the-index-fav">Highest Scored Website</h1>
+        </div>
+        <div className="the-index-header">
+          <span>Absolute Excellence</span>
+          <span>Ordered by Highst score</span>
+        </div>
+        <ul className="the-website-index">
           {
             websites.map(website => (
+              website.title != "Trevor Uptain" ? 
               <WebsiteIndexItem
               key={website.id}
               website={website}
               fetchWebsite={this.props.fetchWebsite}
-              />
+              /> : ""
               )
             )
           }

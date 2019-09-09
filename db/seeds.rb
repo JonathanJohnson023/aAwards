@@ -10,9 +10,12 @@
 User.create([
   {id: 777, email: "JonathanJohnson023@gmail.com", username: "Jonathan", password:"Nanakuli"},
   {id: 7, email: "test@user.com", username:"User", password: "hunter12"},
-  {id: 2, email: "ivo@email.com", username:"ivo22", password: "password"}
+  {id: 2, email: "ivo@email.com", username:"ivo22", password: "password"},
+  {id: 1, email: "trevoruptain@gmail.com", username:"Trevor", password:"password"}
   ])
 
   Website.create([
+    {title: "Trevor Uptain", url:"https://trevoruptain.com/", author_id: 1, score_avg: 10 },
     {title: "Picto-Gram", url:"https://picto-gram.herokuapp.com/#/", author_id: 2}
   ])
+

@@ -8,6 +8,8 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag asset_path('tab-icon.png') %>
+    <%# asset_path 'particles.json' %>
+
     <% if logged_in? %>
       <script>
         window.currentUser = {
@@ -18,10 +20,12 @@
       </script>
     <% end %>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>particlesJS.load('canvas', "assets/particles.json", function(){});</script>
   </head>
-
   <body>
+ 
+
     <%= yield %>
   </body>
 </html>

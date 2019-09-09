@@ -1,0 +1,95 @@
+.the-high-roller{
+  height: 500px;
+  width: 100%;
+}
+
+.the-index-header{
+  height: 131px;
+  width: 92%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 66px;
+}
+
+.the-index-header > span{
+  width: 33%;
+  font-size: 18px;
+}
+
+.the-website-index{
+  width: 92%;
+  height: 100%;
+  margin: 0 auto;
+  margin: 0 66px;
+}
+
+.website-index-li{
+  display: flex;
+  height: 325px;
+  width: 25%;
+}
+
+.website-index-li:hover{
+ cursor: pointer;
+}
+
+.the-meat-and{
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  background: #fcfcfc;
+}
+
+figure{
+  height: 66%;
+}
+
+.website-index-info{
+  padding: 20px;
+  box-sizing: inherit;
+}
+
+.website-index-img{
+  width: 100%;
+  height: 100%;
+}
+
+.website-index-footer{
+  display: flex;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: #fcfcfc;
+}
+
+.the-high-roller{
+  background-image: linear-gradient(120deg,#89f7fe 0,#4676fa 100%);
+}
+
+.canvas{
+  overflow: hidden;
+  position: relative;
+  background: asset-url("TU.png");
+  background-position-x: center;
+  background-position-y: 33%;
+  background-repeat: no-repeat;
+  background-size: 38vw;
+  height: 100%;
+  width: 100%;
+}
+
+.the-index-fav{
+  position: absolute;
+  top: 125px;
+  left: 66px;
+  font-size: 20px;
+  color: #fcfcfc;
+}
+

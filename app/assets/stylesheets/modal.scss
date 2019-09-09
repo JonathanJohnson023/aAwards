@@ -3,12 +3,11 @@
 }
 
 .modal-child{
-  height: 100%;
+  display: contents;
 }
 
 .modal.open {
-  display: block;
-  height: inherit;
+  display: contents;
 }
 
 .modal-background {
@@ -29,7 +28,6 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  top: 100px;
   margin: auto;
   width: 600px;
   height: 55%;
@@ -48,10 +46,13 @@
   font-size: 36px;
   line-height: 1;
   cursor: pointer;
+  z-index: 5;
 }
 
 .modal-close:hover {
-  color: #f00;
+  opacity: 0.75;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 
 .modal-session-form > h2 {

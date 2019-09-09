@@ -1,13 +1,15 @@
 #main{
   position: absolute;
-  width: 100vw;
+  width: 100%;
   left: 0;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  height: 100%;
+  background: #f4f7f6;
 }
 
 .move{
-  left: 320px !important ;
-  transition: all 1s ease-in-out;
+  left: 320px !important;
+  transition: all 0.5s ease-in-out;
 }
 
 
@@ -22,7 +24,7 @@
   left: -320px;
   right: 0;
   z-index: 2;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
   pointer-events: none;
 }
 
@@ -34,7 +36,7 @@
   left: 0;
   right: 0;
   z-index: 2;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
 }
 
@@ -44,7 +46,7 @@
   top: 0;
   height: 100%;
   background: #f4f7f6;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
   overflow-x: hidden;
   z-index: 2;
 
@@ -61,4 +63,38 @@
   background: #f4f7f6;
   border-bottom: 1px solid #E6EAEA;
   transition: background 0.3s ease-in-out, border 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.das-side-links > a{
+  text-decoration: none;
+}
+
+.side-nav-item:hover{
+  background-color: #fcfcfc;
+  transition: background 0.3s ease-in-out;
+}
+
+#home{
+  border-top: 1px solid #E6EAEA;
+}
+
+.side-x-close{
+  float: right;
+  position: relative;
+  right: 64px;
+  top: 22px;
+  font-size: 18px;
+}
+
+.side-x-close:hover{
+  opacity: 0.75;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.side-nav-closers{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 62px;
 }
