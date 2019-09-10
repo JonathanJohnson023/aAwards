@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_06_165928) do
+ActiveRecord::Schema.define(version: 2019_09_10_013126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2019_09_06_165928) do
   create_table "websites", force: :cascade do |t|
     t.string "title", null: false
     t.string "url", null: false
-    t.text "description"
-    t.string "img_url"
+    t.text "description", null: false
+    t.string "img_url", null: false
     t.integer "author_id"
     t.integer "score_avg"
     t.datetime "created_at", null: false

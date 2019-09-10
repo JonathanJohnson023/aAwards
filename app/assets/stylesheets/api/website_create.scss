@@ -1,0 +1,104 @@
+
+.website-create-form{
+  box-sizing: border-box;
+  position: relative;
+  width: 1905px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 66px;
+  padding-right: 66px;
+  clear: both;
+}
+
+.create-wrapper{
+  box-sizing: border-box;
+  position: relative;
+  padding: 50px 0;
+  transition: background 0.3s ease-in-out;
+}
+
+
+.create-website-header{
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 800;
+  margin: 50px 0;
+}
+
+
+.website-create-input-fields{
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: inherit;
+  flex-direction: column;
+  margin: auto;
+  background-color: #fff;
+  padding: 25px 40px;
+  height: 70%;
+  width: 70%;
+  max-width: 918px;
+}
+
+.create-website-ul{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  clear: both;
+}
+
+.create-website-ul > li{
+  box-sizing: border-box;
+  list-style-type: none;
+  display: flex;
+  clear: both;
+}
+
+.create-website-ul > li > label {
+  display: flex;
+  box-sizing: border-box;
+  width: 28%;
+  height: 60px;
+  align-items: center;
+}
+
+.create-website-lis{
+  box-sizing: border-box;
+  width: 100%;
+  height: 74px;
+}
+
+.create-website-lables{
+  box-sizing: border-box;
+  margin: 7px 0;
+}
+
+.create-website-input{
+  box-sizing: border-box;
+  font-size: 16px;
+  width: 72%;
+  float: right;
+  margin: 7px 0;
+  border: 1px solid #DBE0DF;
+  transition: all 0.3s ease-in-out;
+  padding: 0 15px;
+}
+
+.create-website-input.textarea{
+  box-sizing: border-box;
+  padding-top: 15px; 
+}
+.create-wrapper > p {
+  box-sizing: border-box;
+  text-align: center;
+} 
+.session-submit.website-create{
+  box-sizing: border-box;
+  margin: auto;
+  width: 70%;
+  display: inline-block;
+  max-width: 918px;
+}

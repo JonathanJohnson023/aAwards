@@ -15,7 +15,7 @@ User.create([
   ])
 
   Website.create([
-    {title: "Trevor Uptain", url:"https://trevoruptain.com/", author_id: 1, score_avg: 10 },
-    {title: "Picto-Gram", url:"https://picto-gram.herokuapp.com/#/", img_url:"https://i.imgur.com/ZnNJLd8.jpg", author_id: 2}
+    {title: "Trevor Uptain", url:"https://trevoruptain.com/", img_url:"https://placeholder", description:"Placeholder", author_id: 1, score_avg: 10 },
+    {title: "Picto-Gram", url:"https://picto-gram.herokuapp.com/#/", img_url:"https://i.imgur.com/ZnNJLd8.jpg", description:"Placeholder", author_id: 2}
   ])
 

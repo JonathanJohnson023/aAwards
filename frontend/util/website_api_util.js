@@ -20,11 +20,11 @@ export const createVote = vote => (
   })
 );
 
-export const createWebsite = websiteForm => (
+export const createWebsite = website => (
   $.ajax({
     method: 'POST',
     url: '/api/websites',
-    data: websiteForm,
+    data: { website }
   })
 );
 

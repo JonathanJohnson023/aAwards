@@ -25,10 +25,10 @@ function SideNav(props) {
           </div>
         </div>
         <div className="das-side-links">
-          <Link to="/"><span className="side-nav-item" id="home">Home</span></Link>
-          <Link to=""><span className="side-nav-item">Websites</span></Link>
-          <Link to=""><span className="side-nav-item">Vote</span></Link>
-          <Link to=""><span className="side-nav-item">Jobs && Talent</span></Link>
+          <Link to="/"><span onClick={toggleNav} className="side-nav-item" id="home">Home</span></Link>
+          <Link to=""><span onClick={toggleNav} className="side-nav-item">Websites</span></Link>
+          <Link to=""><span onClick={toggleNav} className="side-nav-item">Vote</span></Link>
+          <Link to=""><span onClick={toggleNav} className="side-nav-item">Jobs && Talent</span></Link>
         </div>
       </div>
     </div>
