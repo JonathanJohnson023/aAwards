@@ -12,6 +12,12 @@ class ChirpIndex extends React.Component {
     // ).then()
   }
 
+  componentDidUpdate(){
+    if(this.props.history.location.pathname !== "/websites"){
+      <script>{particlesJS.load('canvas', `${window.particles}`, function(){})}</script>
+    }
+  }
+
 
   render() {
     const { websites } = this.props;
@@ -19,14 +25,19 @@ class ChirpIndex extends React.Component {
     let display;
     if(this.props.history.location.pathname !== "/websites"){
       display = <div className="the-high-roller">
-                  <div className="canvas" id="canvas"/>
-                  <h1 className="the-index-fav">Highest Scored Website</h1>
-                  <script>{particlesJS.load('canvas', `${window.particles}`, function(){})}</script>
+                  <div className="cover-art">
+                    <img className="high-roller-title" src={window.TU} />
+                    <div className="canvas" id="canvas"/>
+                  </div>
+                  <strong className="the-index-fav">Highest Scored Website</strong>
+                  <div className="cover-button-botleft"><a className="bottom-left-a-tag" href="https://trevoruptain.com/" target="_blank">Visit Site</a></div>
                 </div>
     }
     return (
       <div>
+        
         {display}
+
         <div className="the-index-header">
           <span>Absolute Excellence</span>
           <span>Ordered by Highst score</span>

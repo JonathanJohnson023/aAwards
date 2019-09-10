@@ -74,23 +74,68 @@
   background-image: linear-gradient(120deg,#89f7fe 0,#4676fa 100%);
 }
 
+.cover-art{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(120deg, #89f7fe 0, #4676fa 100%);
+  justify-content: center;
+  align-items: center;
+}
+
 .canvas{
   overflow: hidden;
   position: relative;
-  background: asset-url("TU.png");
-  background-position-x: center;
-  background-position-y: 33%;
-  background-repeat: no-repeat;
-  background-size: 38vw;
   height: 100%;
   width: 100%;
+  opacity: 0.4;
 }
+
+.high-roller-title{
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  top: 130px;
+}
+
+// {
+//   overflow: hidden;
+//   position: absolute;
+//   z-index: 1;
+//   pointer-events: none;
+//   top: 200px;
+//   color: white;
+//   font-size: 38px;
+//   font-weight: 800;
+// }
 
 .the-index-fav{
   position: absolute;
   top: 125px;
-  left: 66px;
+  left: 75px;
   font-size: 20px;
+  color: #fcfcfc;
+  z-index: 1;
+}
+
+.cover-button-botleft{
+  position: relative;
+  left: 75px;
+  display: flex;
+  bottom: 80px;
+  z-index: 1;
+  font-size: 16px;
+  background: #42c5b6;
+  width: 9%;
+  justify-content: center;
+  height: 34px;
+  align-items: center;
+  border-radius: 25px;
+  max-width: 130px
+}
+
+.bottom-left-a-tag{
   color: #fcfcfc;
 }
 
