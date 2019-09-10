@@ -5,23 +5,27 @@ class ChirpIndex extends React.Component {
   constructor(props) {
     super(props);
   }
+
   componentDidMount() {
     this.props.fetchWebsites().then(
     particlesJS.load('canvas', "assets/particles.json", function(){})
     ).then()
-    
   }
 
   render() {
     const { websites } = this.props;
 
+    let display;
+    if(this.props.history.location.pathname !== "/websites"){
+      display = <div className="the-high-roller">
+                  <div className="canvas" id="canvas"/>
+                  <h1 className="the-index-fav">Highest Scored Website</h1>
+                  <script>{particlesJS.load('canvas', "assets/particles.json", function(){})}</script>
+                </div>
+    }
     return (
       <div>
-        
-        <div className="the-high-roller">
-          <div className="canvas" id="canvas"/>
-          <h1 className="the-index-fav">Highest Scored Website</h1>
-        </div>
+        {display}
         <div className="the-index-header">
           <span>Absolute Excellence</span>
           <span>Ordered by Highst score</span>
