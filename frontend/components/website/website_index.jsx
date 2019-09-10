@@ -7,10 +7,11 @@ class ChirpIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchWebsites().then(
-    particlesJS.load('canvas', `${window.particles}`, function(){})
-    ).then()
+    this.props.fetchWebsites().then()
+    // particlesJS.load('canvas', `${window.particles}`, function(){})
+    // ).then()
   }
+
 
   render() {
     const { websites } = this.props;
@@ -20,6 +21,7 @@ class ChirpIndex extends React.Component {
       display = <div className="the-high-roller">
                   <div className="canvas" id="canvas"/>
                   <h1 className="the-index-fav">Highest Scored Website</h1>
+                  <script>{particlesJS.load('canvas', `${window.particles}`, function(){})}</script>
                 </div>
     }
     return (
