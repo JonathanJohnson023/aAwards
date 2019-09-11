@@ -4,11 +4,11 @@ import WebsiteCreate from "./website_create"
 import {clearErrors} from "../../actions/session_actions";
 
 const mapStateToProps = (state, ownProps) => {
-  
   const website = state.entities.websites[Object.keys(state.entities.websites).length - 1]
+
   return ({
     currentUser: state.entities.users[state.session.id],
-    errors: state.errors.session,
+    errors: Object.values(state.errors.session),
     website
   })
 };

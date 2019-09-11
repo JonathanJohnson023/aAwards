@@ -1,7 +1,8 @@
 import React from 'react';
 import WebsiteIndexItem from './website_index_item';
+import {Link} from 'react-router-dom';
 
-class ChirpIndex extends React.Component {
+class WebsiteIndex extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -26,15 +27,19 @@ class ChirpIndex extends React.Component {
     if(this.props.history.location.pathname !== "/websites"){
       display = <div className="the-high-roller">
                   <div className="cover-art">
-                    <img className="high-roller-title" src={window.TU} />
+                    {/* <Link to={`/websites/${website.id}`} > */}
+                      <img className="high-roller-title" src={window.TU} />
+                    {/* </Link> */}
                     <div className="canvas" id="canvas"/>
                   </div>
                   <strong className="the-index-fav">Highest Scored Website</strong>
-                  <div className="cover-button-botleft"><a className="bottom-left-a-tag" href="https://trevoruptain.com/" target="_blank">Visit Site</a></div>
+                  <a href="https://trevoruptain.com/" target="_blank" className="cover-button-botleft">
+                    <span className="bottom-left-a-tag" href="https://trevoruptain.com/" target="_blank">Visit Site</span>
+                  </a>
                 </div>
     }
     return (
-      <div>
+      <div className="more-or-less-home">
         
         {display}
 
@@ -42,7 +47,7 @@ class ChirpIndex extends React.Component {
           <span>Absolute Excellence</span>
           <span>Ordered by Highst score</span>
         </div>
-        <ul className="the-website-index">
+        <ul className="the-website-index-ul">
           {
             websites.map(website => (
               website.title != "Trevor Uptain" ? 
@@ -60,4 +65,4 @@ class ChirpIndex extends React.Component {
   }
 }
 
-export default ChirpIndex;
+export default WebsiteIndex;

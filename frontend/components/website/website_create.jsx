@@ -10,12 +10,14 @@ class WebsiteForm extends React.Component {
         img_url: "",
         author_id: this.props.currentUser.id,
         score_avg: 5,
+        errors: []
     };
     
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   renderErrors() {
+    // const errors = this.props.errors ? 
     return(
       <ul className="errors-ul">
         {this.props.errors.map((error, i) => (
@@ -36,12 +38,21 @@ class WebsiteForm extends React.Component {
   handleSubmit(e) {
       e.preventDefault();
       const form = Object.assign({}, this.state);
-      this.props.createWebsite(form).then(ele => {this.props.history.push(`/websites/${ele.id}`)})
+      this.props.createWebsite(form).then(ele => {
+        this.props.history.push(`/websites/${ele.website.id}`)
+      })
   };
-
+  // .fail((error) => {
+  //   this.setState({errors: error.responseJSON})
+  // })
+ 
   componentWillUnmount(){
     this.props.clearErrors()
   } 
+
+  // componentDidUpdate(prevProps){
+  //   this.setState(this.props.errors)
+  // }
 
   render() {
     return (

@@ -16,7 +16,7 @@ export default ({ user, logout, openModal, openSideNav }) => {
      }
     }
 
-    const toggleNav = () =>{
+    const toggleNav = () => {
       openSideNav("open")
       const main = document.getElementById("main")
       main.classList.add("move")

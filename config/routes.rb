@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resource :user, only: [:create]
     resources :websites
     resource :session, only: [:create, :destroy]
-    get 'websites/top' => 'websites#top', :as => :top_websites
+    get 'website/top' => 'websites#top', :as => :top_websites
 
   end
 

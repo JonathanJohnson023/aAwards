@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_013126) do
+ActiveRecord::Schema.define(version: 2019_09_11_022832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_09_10_013126) do
     t.text "description", null: false
     t.string "img_url", null: false
     t.integer "author_id"
-    t.integer "score_avg"
+    t.integer "score_avg", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["score_avg"], name: "index_websites_on_score_avg"

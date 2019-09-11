@@ -3,9 +3,10 @@ import * as APIUtil from '../util/website_api_util';
 export const RECEIVE_WEBSITES = 'RECEIVE_WEBSITES';
 export const RECEIVE_WEBSITE = 'RECEIVE_WEBSITE';
 export const RECEIVE_VOTE = 'RECEIVE_VOTE';
+export const RECEIVE_WEBSITE_ERRORS = 'RECEIVE_WEBSITE_ERRORS';
 
 export const receiveErrors = errors => ({
-  type: RECEIVE_SESSION_ERRORS,
+  type: RECEIVE_WEBSITE_ERRORS,
   errors
 });
 
@@ -41,11 +42,15 @@ export const fetchWebsite = id => dispatch => (
 );
 
 export const createWebsite = website => dispatch => (
-  APIUtil.createWebsite(website).then(website => (
-    dispatch(receiveWebsite(website))
-  )), error => (
-    dispatch(receiveErrors(error.responseJSON))
-  )
+  APIUtil.createWebsite(website).then(website => {
+    return dispatch(receiveWebsite(website))
+  }).fail((error) => dispatch(receiveErrors(error)))
 );
 
-window.fetchWebsites = fetchWebsites
+// , error => (
+//   dispatch(receiveErrors(error.responseJSON))
+// )
+// 
+// 
+// 
+// window.fetchWebsites = fetchWebsites

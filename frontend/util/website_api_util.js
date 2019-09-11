@@ -31,8 +31,9 @@ export const createWebsite = website => (
 export const fetchTopWebsite = () => (
   $.ajax({
     method: 'GET',
-    url: `/api/websites/top`
+    url: `/api/website/top`
+
   })
 );
-
+window.fetchWebsites = fetchWebsites
 window.fetchTopWebsite = fetchTopWebsite

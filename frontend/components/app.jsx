@@ -15,7 +15,7 @@ import WebsitesCreateContainer from "./website/website_create_container";
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () =>(
-  <div>
+  <div className="the-big-boy">
       <SideNavBar />
       <div id="main">
         <Modal />
@@ -27,6 +27,7 @@ const App = () =>(
           <Route path="/websites/:websiteId" component={WebsiteShowContainer} />
           <Route path="/websites" component={WebsiteIndexContainer} /> 
           <Route path="/" component={WebsiteIndexContainer} />
+          <Redirect to="/" />
         </Switch>
     </div>
   </div>
