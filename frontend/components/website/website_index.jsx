@@ -5,13 +5,10 @@ import {Link} from 'react-router-dom';
 class WebsiteIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      topWebsite: this.props.topWebsite,
-      websites: this.props.websites
-    }
   }
 
   componentDidMount() {
+    
     this.props.fetchWebsites()
     this.props.fetchTopWebsite()
       // particlesJS.load('canvas', `${window.particles}`, function(){})
@@ -24,12 +21,15 @@ class WebsiteIndex extends React.Component {
   }
   render() {
     let display;
-    if(this.props.history.location.pathname !== "/websites"){
+    if(!this.props.topWebsite){
+      this.props.fetchTopWebsite()
+    }
+    if(this.props.history.location.pathname !== "/websites" && this.props.topWebsite){
       display = <div className="the-high-roller">
                   <div className="cover-art">
-                    {/* <Link to={`/websites/${this.state.topWebsite.id}`} > */}
-                      <img className="high-roller-title" src={window.TU} />
-                    {/* </Link> */}
+                    <Link to={`/websites/${this.props.topWebsite.id}`} >
+                      <img className="high-roller-title" src={this.props.topWebsite.img_url} />
+                    </Link>
                     <div className="canvas" id="canvas"/>
                   </div>
                   <strong className="the-index-fav">Highest Scored Website</strong>
@@ -38,6 +38,7 @@ class WebsiteIndex extends React.Component {
                   </a>
                 </div>
     }
+    
     return (
       <div className="more-or-less-home">
         
@@ -49,8 +50,8 @@ class WebsiteIndex extends React.Component {
         </div>
         <ul className="the-website-index-ul">
           { 
-            this.state.websites.map(website => (
-               website.id != this.state.topWebsite ? 
+            this.props.websites.map(website => (
+              website.id != this.props.topWebsite.id ? 
               <WebsiteIndexItem
               key={website.id}
               website={website}

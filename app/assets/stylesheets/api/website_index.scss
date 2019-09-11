@@ -105,6 +105,10 @@
   align-items: center;
 }
 
+.cover-art > a {
+  display: contents;
+}
+
 .canvas{
   overflow: hidden;
   position: relative;
@@ -117,8 +121,7 @@
   overflow: hidden;
   position: absolute;
   z-index: 1;
-  pointer-events: none;
-  top: 130px;
+  top: 200px;
 }
 
 // {

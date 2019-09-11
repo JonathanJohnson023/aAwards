@@ -4,9 +4,11 @@ import { fetchWebsites, fetchWebsite, fetchTopWebsite } from '../../actions/webs
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownprops) => {
+  const topWebsite = state.ui.helpers.topWebsite
+  const websites = Object.values(state.entities.websites)
   return ({
-  websites: Object.values(state.entities.websites),
-  topWebsite: state.entities.websites.topWebsite
+    topWebsite,
+    websites
   })
 }
 
