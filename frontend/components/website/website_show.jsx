@@ -14,7 +14,7 @@ class WebsiteShow extends React.Component {
       this.props.fetchTopWebsite()
     }
     if(!(this.props.website)){
-      return(
+      return (
         <div></div>
       )
     }

@@ -28,6 +28,16 @@ export const createWebsite = website => (
   })
 );
 
+export const updateWebsite = website => (
+ $.ajax({
+    method: "PATCH",
+    url:  `/api/websites/${website.id}`,
+    data: {website},
+    contentType: false,
+    processData: false
+ })
+)
+
 export const fetchTopWebsite = () => (
   $.ajax({
     method: 'GET',
@@ -35,5 +45,4 @@ export const fetchTopWebsite = () => (
 
   })
 );
-window.fetchWebsites = fetchWebsites
-window.fetchTopWebsite = fetchTopWebsite
+window.updateWebsite = updateWebsite

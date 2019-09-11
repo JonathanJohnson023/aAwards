@@ -82,6 +82,7 @@ class SessionForm extends React.Component {
               onChange={this.update('password')} 
               placeholder="Password"
             />
+            {this.renderErrors()}
             <input className="session-submit" 
             type="submit" 
             value={this.props.buttontype}
@@ -94,7 +95,6 @@ class SessionForm extends React.Component {
               /> 
             : ""}
           </div>
-          {this.renderErrors()}
         </form>
      </div>
     );

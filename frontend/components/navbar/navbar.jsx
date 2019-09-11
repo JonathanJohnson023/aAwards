@@ -47,11 +47,20 @@ export default ({ user, logout, openModal, openSideNav }) => {
                 <li className="link1">{display.link1}</li>
                 <li className="link2">{display.link2}</li>
               </ul>
-              <Link to="/websites/new">
-                <div className="submit-btn">
+              
+              {user ?
+              <Link to="/websites/new" >
+                <div className="submit-btn" >
                   <h2 className="submit-btn-text">SUBMIT YOUR SITE!</h2>
                 </div>
-              </Link>
+              </Link> 
+              : 
+              <div onClick={()=> openModal('login')} >
+                <div className="submit-btn" >
+                  <h2 className="submit-btn-text">SUBMIT YOUR SITE!</h2>
+                </div>
+              </div> 
+              }
             </div>
           </div>
         </div>

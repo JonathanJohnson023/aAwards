@@ -22,6 +22,13 @@ class Api::WebsitesController < ApplicationController
   end
 
   def update
+    @website = Website.find_by(id: params[:id])
+    if current_user.id == @website.author_id
+      @website.update(website_params)
+      render :show
+    else 
+      render json: @user.errors.full_messages, status: 422
+    end
 
   end
 

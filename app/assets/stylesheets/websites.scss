@@ -1,3 +1,13 @@
 // Place all the styles related to the websites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.errors-ul{
+  margin: auto;
+  color: red;
+  padding-bottom: 30px;
+  list-style: none;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+}

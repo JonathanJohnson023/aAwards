@@ -12,6 +12,7 @@ import SideNavBar from './navbar/side_navbar';
 import WebsiteIndexContainer from './website/website_index_container';
 import WebsiteShowContainer from "./website/website_show_container";
 import WebsitesCreateContainer from "./website/website_create_container";
+import WebsiteUpdateContainer from "./website/website_update_container"
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () =>(
@@ -24,6 +25,7 @@ const App = () =>(
         </header>
         <Switch>
           <ProtectedRoute exact path="/websites/new" component={WebsitesCreateContainer} />
+          <ProtectedRoute exact path="/websites/:websiteId/edit" component={WebsiteUpdateContainer} />
           <Route path="/websites/:websiteId" component={WebsiteShowContainer} />
           <Route path="/websites" component={WebsiteIndexContainer} /> 
           <Route path="/" component={WebsiteIndexContainer} />
