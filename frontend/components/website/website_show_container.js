@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   let website = state.entities.websites[id]
   const topWebsite = state.ui.helpers.topWebsite
   return({
+    id,
     website,
     topWebsite
   })

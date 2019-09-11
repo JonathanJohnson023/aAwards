@@ -19,25 +19,34 @@ class WebsiteShow extends React.Component {
       )
     }
     const {website} = this.props
-    let particle;
-    let cover; 
+    let particle = "the-hidden"
+    let cover = "show-website-cover"
+    let title = "show-title"
     if(website.id === this.props.topWebsite.id){
       particle = "canvas";
       cover = "high-roller-title";
+      title = "the-hidden";
       <script>{particlesJS.load('canvas', `${window.particles}`, function(){})}</script>
-    } else { 
-      cover = "show-website-cover"
     }
+    
     return (
-      <div>
+      <div className="the-full-show">
         <div className="the-high-roller">
           <div className="cover-art">
             <img className={cover} src={website.img_url} />
+            <a className={title} href={website.url} target="_blank" >{website.title}</a>
             <div className={particle} id={particle}/>
           </div>
+          <a href={website.url} target="_blank" className="cover-button-botleft">
+            <span className="bottom-left-a-tag">Visit Site</span>
+          </a>
         </div>
-        <h1>{website.title}</h1>
-        <h1>{website.description}</h1>
+        <div className="show-body">
+          <p className="show-description">{website.description}</p>
+        </div>
+        <div className="website-show-direction">
+
+        </div>
       </div>
     );
   }

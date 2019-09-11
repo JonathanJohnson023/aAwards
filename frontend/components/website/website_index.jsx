@@ -27,14 +27,14 @@ class WebsiteIndex extends React.Component {
     if(this.props.history.location.pathname !== "/websites" && this.props.topWebsite){
       display = <div className="the-high-roller">
                   <div className="cover-art">
-                    <Link to={`/websites/${this.props.topWebsite.id}`} >
+                    <Link to={`/websites/${this.props.topWebsite.id}`} className="the-content-link">
                       <img className="high-roller-title" src={this.props.topWebsite.img_url} />
                     </Link>
                     <div className="canvas" id="canvas"/>
                   </div>
                   <strong className="the-index-fav">Highest Scored Website</strong>
-                  <a href="https://trevoruptain.com/" target="_blank" className="cover-button-botleft">
-                    <span className="bottom-left-a-tag" href="https://trevoruptain.com/" target="_blank">Visit Site</span>
+                  <a href={this.props.topWebsite.url} target="_blank" className="cover-button-botleft">
+                    <span className="bottom-left-a-tag">Visit Site</span>
                   </a>
                 </div>
     }
