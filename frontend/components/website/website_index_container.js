@@ -1,14 +1,17 @@
 import React from 'react';
 import WebsiteIndex from './website_index';
-import { fetchWebsites, fetchWebsite } from '../../actions/website_actions';
+import { fetchWebsites, fetchWebsite, fetchTopWebsite } from '../../actions/website_actions';
 import { connect } from 'react-redux';
 
-const mapStateToProps = (state) => ({
-  websites: Object.values(state.entities.websites)
-  
-});
+const mapStateToProps = (state, ownprops) => {
+  return ({
+  websites: Object.values(state.entities.websites),
+  topWebsite: state.entities.websites.topWebsite
+  })
+}
 
 const mapDispatchToProps = (dispatch) => ({
+  fetchTopWebsite: () => dispatch(fetchTopWebsite()),
   fetchWebsites: () => dispatch(fetchWebsites()),
   fetchWebsite: id => dispatch(fetchWebsite(id)),
 });

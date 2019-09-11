@@ -21,6 +21,6 @@ user = User.create([
   Website.create([
     {title: "Trevor Uptain", url:"https://trevoruptain.com/", img_url:"https://placeholder", description:"Placeholder", author_id: user[0].id, score_avg: 10 },
     {title: "Picto-Gram", url:"https://picto-gram.herokuapp.com/#/", img_url:"https://i.imgur.com/ZnNJLd8.jpg", description:"Placeholder", author_id: user[3].id},
-    {title: "LoudCloud", url:"https://the-loudcloud.herokuapp.com/#/", img_url:"https://www.lifewire.com/thmb/PuEfsq5Y8s13l5abQiEc7aZ18jA=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/soundcloud-logo-56a320f03df78cf7727be72e.png", description:"Placeholder", author_id: user[2].id}
+    {title: "LoudCloud", url:"https://the-loudcloud.herokuapp.com/#/", img_url:"https://donnie-loudcloud-prod.s3.us-east-2.amazonaws.com/loudcloud2.png", description:"Placeholder", author_id: user[2].id}
   ])
 

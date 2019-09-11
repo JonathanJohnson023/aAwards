@@ -4,7 +4,7 @@ export const RECEIVE_WEBSITES = 'RECEIVE_WEBSITES';
 export const RECEIVE_WEBSITE = 'RECEIVE_WEBSITE';
 export const RECEIVE_VOTE = 'RECEIVE_VOTE';
 export const RECEIVE_WEBSITE_ERRORS = 'RECEIVE_WEBSITE_ERRORS';
-
+export const RECEIVE_TOP_WEBSITE = " RECEIVE_TOP_WEBSITE"
 export const receiveErrors = errors => ({
   type: RECEIVE_WEBSITE_ERRORS,
   errors
@@ -23,6 +23,7 @@ export const receiveWebsite = (website) => {
   })
 };
 
+
 export const fetchWebsites = () => dispatch => (
   APIUtil.fetchWebsites().then(website => (
     dispatch(receiveWebsites(website))
@@ -30,8 +31,8 @@ export const fetchWebsites = () => dispatch => (
 );
 
 export const fetchTopWebsite = () => dispatch => (
-  APIUtil.fetchWebsites().then(website => (
-    dispatch(receiveWebsite(website))
+  APIUtil.fetchTopWebsite().then(topWebsite => (
+    dispatch({type: RECEIVE_TOP_WEBSITE, topWebsite})
   ))
 );
 

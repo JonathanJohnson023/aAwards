@@ -5,29 +5,29 @@ import {Link} from 'react-router-dom';
 class WebsiteIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      topWebsite: this.props.topWebsite,
+      websites: this.props.websites
+    }
   }
 
   componentDidMount() {
-    this.props.fetchWebsites().then()
-    // particlesJS.load('canvas', `${window.particles}`, function(){})
-    // ).then()
+    this.props.fetchWebsites()
+    this.props.fetchTopWebsite()
+      // particlesJS.load('canvas', `${window.particles}`, function(){})
+      // ).then()
   }
-
   componentDidUpdate(){
     if(this.props.history.location.pathname !== "/websites"){
       <script>{particlesJS.load('canvas', `${window.particles}`, function(){})}</script>
     }
   }
-
-
   render() {
-    const { websites } = this.props;
-
     let display;
     if(this.props.history.location.pathname !== "/websites"){
       display = <div className="the-high-roller">
                   <div className="cover-art">
-                    {/* <Link to={`/websites/${website.id}`} > */}
+                    {/* <Link to={`/websites/${this.state.topWebsite.id}`} > */}
                       <img className="high-roller-title" src={window.TU} />
                     {/* </Link> */}
                     <div className="canvas" id="canvas"/>
@@ -48,14 +48,14 @@ class WebsiteIndex extends React.Component {
           <span>Ordered by Highst score</span>
         </div>
         <ul className="the-website-index-ul">
-          {
-            websites.map(website => (
-              website.title != "Trevor Uptain" ? 
+          { 
+            this.state.websites.map(website => (
+               website.id != this.state.topWebsite ? 
               <WebsiteIndexItem
               key={website.id}
               website={website}
               fetchWebsite={this.props.fetchWebsite}
-              /> : ""
+              />  : " "
               )
             )
           }
