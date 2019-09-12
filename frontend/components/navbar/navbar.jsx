@@ -35,7 +35,7 @@ export default ({ user, logout, openModal, openSideNav }) => {
 
         <div className="east-side">
           <Link to="/" className="logo-link">
-            <img className="the-logo" src="/assets/take2-of-logo.png"/>
+            <img className="the-logo" src={window.headerLogo}/>
           </Link>
 
           <div className="the-righters">
