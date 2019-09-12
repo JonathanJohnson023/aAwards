@@ -28,7 +28,7 @@ const App = () =>(
           <ProtectedRoute path="/websites/:websiteId/edit" component={WebsiteUpdateContainer} />
           <Route path="/websites/:websiteId" component={WebsiteShowContainer} />
           <Route path="/websites" component={WebsiteIndexContainer} /> 
-          <Route path="/" component={WebsiteIndexContainer} />
+          <Route exact path="/" component={WebsiteIndexContainer} />
           <Redirect to="/" />
         </Switch>
     </div>

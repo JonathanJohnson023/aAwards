@@ -21,6 +21,7 @@ class Website < ApplicationRecord
     foreign_key: :author_id,
     class_name: :User
 
+    has_many_attached :photos
 
   # def average_rating
   #   reviews.average(:rating)
