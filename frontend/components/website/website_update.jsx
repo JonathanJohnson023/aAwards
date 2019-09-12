@@ -5,13 +5,12 @@ class WebsiteUpdateForm extends React.Component {
     constructor(props) {
         super(props);
 
-        let { website } = this.props;
+        let { currentWebsite, currentUser } = this.props;
         this.state = {
-            title: website.title,
-            url: website.url,
-            description: website.description,
-            img_url: website.img_url,
-            photoFile: null
+            title: currentWebsite.title,
+            url: currentWebsite.url,
+            description: currentWebsite.description,
+            img_url: currentWebsite.img_url,
         };
 
 
