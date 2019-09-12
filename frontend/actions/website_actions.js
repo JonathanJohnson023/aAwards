@@ -50,10 +50,10 @@ export const createWebsite = website => dispatch => (
   }).fail((error) => dispatch(receiveErrors(error)))
 );
 
-export const updateWebsite = website => dispatch => (
-  APIUtil.updateWebsite(website).then(website => 
+export const updateWebsite = form => dispatch => (
+  APIUtil.updateWebsite(form).then(website => (
     dispatch(receiveWebsite(website))
-    )
+  ))
 );
 // , error => (
 //   dispatch(receiveErrors(error.responseJSON))

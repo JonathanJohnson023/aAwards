@@ -25,7 +25,7 @@ const App = () =>(
         </header>
         <Switch>
           <ProtectedRoute exact path="/websites/new" component={WebsitesCreateContainer} />
-          <ProtectedRoute exact path="/websites/:websiteId/edit" component={WebsiteUpdateContainer} />
+          <ProtectedRoute path="/websites/:websiteId/edit" component={WebsiteUpdateContainer} />
           <Route path="/websites/:websiteId" component={WebsiteShowContainer} />
           <Route path="/websites" component={WebsiteIndexContainer} /> 
           <Route path="/" component={WebsiteIndexContainer} />
