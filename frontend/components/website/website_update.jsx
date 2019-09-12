@@ -25,7 +25,6 @@ class WebsiteUpdateForm extends React.Component {
       //   window.alert("Unable to modify the demo user. Please try making a new account to test out this feature!")
       // }
       const form = Object.assign({}, this.state);
-      debugger
       this.props.updateWebsite(form)
         .then(payload => {
         this.props.history.push(`/websites/${payload.website.id}`)

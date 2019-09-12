@@ -3,7 +3,6 @@ import React from 'react'
 class WebsiteForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.state = {
         title: "",
         url: "",
@@ -38,7 +37,6 @@ class WebsiteForm extends React.Component {
   handleSubmit(e) {
       e.preventDefault();
       const form = Object.assign({}, this.state);
-      debugger
       this.props.createWebsite(form).then(ele => {
         this.props.history.push(`/websites/${ele.website.id}`)
       })
