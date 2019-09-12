@@ -40,3 +40,24 @@
   height: 1px;
   border-top: 1px solid #E6EAEA;;
 }
+
+.bottom-right-show-button{
+  position: relative;
+  right: 75px;
+  display: flex;
+  bottom: 80px;
+  z-index: 1;
+  font-size: 16px;
+  background: #42c5b6;
+  width: 9%;
+  justify-content: center;
+  height: 34px;
+  align-items: center;
+  border-radius: 25px;
+  max-width: 130px;
+  float: right;
+}
+
+.bottom-right-show-button > span {
+ color: #fcfcfc;
+}

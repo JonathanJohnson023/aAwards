@@ -5,10 +5,13 @@ import WebsiteShow from './website_show';
 const mapStateToProps = (state, ownProps) => {
   let id = parseInt(ownProps.match.params.websiteId)
   let website = state.entities.websites[id]
-  const topWebsite = state.ui.helpers.topWebsite
+  let topWebsite = state.ui.helpers.topWebsite
+  let currentUser;
+  currentUser = state.session.id ? state.entities.users[state.session.id] : null
   return({
     id,
     website,
+    currentUser,
     topWebsite
   })
 };

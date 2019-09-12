@@ -48,7 +48,7 @@ class WebsiteUpdateForm extends React.Component {
       <div className="website-submission">
         <form className="website-create-form" onSubmit={this.handleSubmit}>
           <div className="create-website-header">
-            <h2>Website Submission</h2>
+            <h2>Update Your Website</h2>
           </div>
           <div className="create-wrapper">
 
