@@ -18,7 +18,7 @@ export default ({website}) => {
             </div>
           </div>
           <div className="website-index-footer">
-            <h1>{website.author_id}</h1>
+            <h1>{website.author_name}</h1>
           </div>
         </div>
     </li>

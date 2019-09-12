@@ -1,3 +1,4 @@
+
 header{
   // position: fixed;
   top: 0;
@@ -7,6 +8,8 @@ header{
   line-height: 73px;
   font-size: 13px;
   font-weight: 400;
+  position: sticky;
+  z-index: 2;
   background-color: #f4f7f6;
 }
 
