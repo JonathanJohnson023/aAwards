@@ -45,7 +45,7 @@ class WebsiteShow extends React.Component {
           <p className="show-description">{website.description}</p>
         </div>
         <div className="website-show-direction">
-
+          <Link to={`/websites/${website.id}/edit`}><button style={{width: 250 + 'px'}}>ahhhhhhh</button></Link>
         </div>
       </div>
     );

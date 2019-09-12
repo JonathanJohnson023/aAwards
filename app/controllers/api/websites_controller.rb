@@ -23,7 +23,7 @@ class Api::WebsitesController < ApplicationController
 
   def update
     @website = Website.find_by(id: params[:id])
-    debugger
+  
     if current_user.id == @website.author_id
       @website.update(website_params)
       render :show

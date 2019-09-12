@@ -4,9 +4,9 @@ import { withRouter } from 'react-router-dom';
 class WebsiteUpdateForm extends React.Component {
     constructor(props) {
         super(props);
-
         let { currentWebsite, currentUser } = this.props;
         this.state = {
+            id: currentWebsite.id,
             title: currentWebsite.title,
             url: currentWebsite.url,
             description: currentWebsite.description,
@@ -21,12 +21,14 @@ class WebsiteUpdateForm extends React.Component {
 
   handleSubmit(e) {
       e.preventDefault();
-      if (this.props.currentUser.email ===  "test@user.com") {
-        window.alert("Unable to modify the demo user. Please try making a new account to test out this feature!")
-      }
+      // if (this.props.currentUser.email ===  "test@user.com") {
+      //   window.alert("Unable to modify the demo user. Please try making a new account to test out this feature!")
+      // }
       const form = Object.assign({}, this.state);
-      this.props.updateWebsite(form).then(ele => {
-        this.props.history.push(`/websites/${ele.website.id}`)
+      debugger
+      this.props.updateWebsite(form)
+        .then(payload => {
+        this.props.history.push(`/websites/${payload.website.id}`)
       })
   };
 
@@ -89,7 +91,6 @@ class WebsiteUpdateForm extends React.Component {
                     />             
                 </li>
               </ul>
-              {this.renderErrors()}
             </div>
             <p>
               <input className="session-submit website-create" 
