@@ -23,22 +23,30 @@ class Api::WebsitesController < ApplicationController
 
   def update
     @website = Website.find_by(id: params[:id])
+    debugger
     if current_user.id == @website.author_id
       @website.update(website_params)
       render :show
     else 
-      render json: @user.errors.full_messages, status: 422
+      render json: @website.errors.full_messages, status: 422
     end
 
   end
 
   def delete
+    @website = Website.find_by(id: params[:id])
+    if current_user.id == @website.author_id
+      @website.destroy
+      render :index
+    else
+      render json: ["idk something messed up"], status: 422
+    end
 
   end
 
   private
     def website_params
-      params.require(:website).permit( :title, :url, :description, :img_url)
+      params.require(:website).permit( :title, :url, :description, :img_url, :author_id, )
     end
   
   

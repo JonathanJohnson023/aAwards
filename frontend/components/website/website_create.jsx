@@ -3,6 +3,7 @@ import React from 'react'
 class WebsiteForm extends React.Component {
   constructor(props) {
     super(props);
+    debugger
     this.state = {
         title: "",
         url: "",
@@ -17,7 +18,6 @@ class WebsiteForm extends React.Component {
   }
 
   renderErrors() {
-    // const errors = this.props.errors ? 
     return(
       <ul className="errors-ul">
         {this.props.errors.map((error, i) => (

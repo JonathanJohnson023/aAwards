@@ -5,6 +5,8 @@ export const RECEIVE_WEBSITE = 'RECEIVE_WEBSITE';
 export const RECEIVE_VOTE = 'RECEIVE_VOTE';
 export const RECEIVE_WEBSITE_ERRORS = 'RECEIVE_WEBSITE_ERRORS';
 export const RECEIVE_TOP_WEBSITE = " RECEIVE_TOP_WEBSITE"
+
+
 export const receiveErrors = errors => ({
   type: RECEIVE_WEBSITE_ERRORS,
   errors
