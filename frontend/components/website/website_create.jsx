@@ -7,13 +7,17 @@ class WebsiteForm extends React.Component {
         title: "",
         url: "",
         description: "",
-        img_url: "",
         author_id: this.props.currentUser.id,
-        score_avg: 5,
-        errors: []
+        cover: null,
+        thumbnail: null,
+        screenshots: null,
+        coverUrl: null
     };
     
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFileCover = this.handleFileCover.bind(this);
+    this.handleFileThumbnail = this.handleFileThumbnail.bind(this);
+    this.handleFileScreenshots = this.handleFileScreenshots.bind(this);
   }
 
   renderErrors() {
@@ -34,17 +38,56 @@ class WebsiteForm extends React.Component {
       };
   }
 
+  
+  handleFileCover(e) {
+    const file = e.target.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({cover: file, coverUrl: fileReader.result});
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  };
+  
+  handleFileThumbnail(e) {
+    const file = e.target.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({thumbnail: file, thumbnailUrl: fileReader.result});
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  };
+  
+  handleFileScreenshots(e) {
+    const file = e.target.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({screenshots: file, screenshotsUrl: fileReader.result});
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  };
+  
   handleSubmit(e) {
       e.preventDefault();
-      const form = Object.assign({}, this.state);
-      this.props.createWebsite(form).then(ele => {
+      const formData = new FormData();
+      formData.append('website[title]', this.state.title);
+      formData.append('website[url]', this.state.url);
+      formData.append('website[description]', this.state.description);
+      formData.append('website[author_id]', this.state.author_id);
+      formData.append('website[cover_photo]', this.state.cover);
+      formData.append('website[thumbnail_photo]', this.state.thumbnail);
+      formData.append('website[screenshot_photos]', this.state.screenshots);
+      console.log(formData)
+      this.props.createWebsite(formData).then(ele => {
         this.props.history.push(`/websites/${ele.website.id}`)
       })
   };
-  // .fail((error) => {
-  //   this.setState({errors: error.responseJSON})
-  // })
- 
+
   componentWillUnmount(){
     this.props.clearErrors()
   } 
@@ -54,6 +97,9 @@ class WebsiteForm extends React.Component {
   // }
 
   render() {
+
+    const previewCover = this.state.coverUrl ? <img className='image-preview-cover' src={this.state.coverUrl} /> : <img className='image-preview' height='540px' width='540px' />;
+
     return (
       <div className="website-submission">
         <form className="website-create-form" onSubmit={this.handleSubmit}>
@@ -93,9 +139,27 @@ class WebsiteForm extends React.Component {
                 <li className="create-website-lis">
                   <label className="create-website-lables">The Image URL for your site</label>
                     <input className="create-website-input"
-                      type="text" 
-                      value={this.state.img_url} 
-                      onChange={this.update('img_url')} 
+                      type="file" 
+                      onChange={this.handleFileCover} 
+                      // placeholder="Image URL"
+                    />             
+                    <div className='image-preview-cover'>
+                        <div className='image-cover'>{previewCover}</div>
+                    </div>            
+                </li>
+                <li className="create-website-lis">
+                  <label className="create-website-lables">The Image URL for your site</label>
+                    <input className="create-website-input"
+                      type="file" 
+                      onChange={this.handleFileThumbnail} 
+                      // placeholder="Image URL"
+                    /> 
+                </li>
+                <li className="create-website-lis">
+                  <label className="create-website-lables">The Image URL for your site</label>
+                    <input className="create-website-input"
+                      type="file" 
+                      onChange={this.handleFileScreenshots} 
                       // placeholder="Image URL"
                     />             
                 </li>
