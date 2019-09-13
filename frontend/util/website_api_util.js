@@ -43,7 +43,7 @@ export const updateWebsite = (website, id) => (
 export const deleteWebsite = (id) =>{
   return(
     $.ajax({
-      url: `api/website/${id}`,
+      url: `/api/websites/${id}`,
       method: 'DELETE',
     })
   )

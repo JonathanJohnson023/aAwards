@@ -33,9 +33,9 @@ class Api::WebsitesController < ApplicationController
 
   end
 
-  def delete
-    @website = Website.find_by(id: params[:id])
-    if current_user.id == @website.author_id
+  def destroy
+    @website = Website.find(params[:id])
+    if current_user.id == @website.user.id
       @website.destroy
       render :index
     else

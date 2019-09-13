@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchWebsite: () => dispatch(fetchWebsite(parseInt(ownProps.match.params.websiteId))),
-  deleteWebsite: () => dispatch(deleteWebsite()),
+  deleteWebsite: (id) => dispatch(deleteWebsite(id)),
   updateWebsite: (website, id) => dispatch(updateWebsite(website, id))
 });
 

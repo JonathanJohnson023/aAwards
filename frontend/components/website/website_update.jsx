@@ -15,7 +15,7 @@ class WebsiteUpdateForm extends React.Component {
           coverUrl: null
         };
 
-
+        this.deleteWebsiteFunc = this.deleteWebsiteFunc.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.update =  this.update.bind(this)
@@ -61,6 +61,12 @@ class WebsiteUpdateForm extends React.Component {
         delete website.thumbnail
         this.setState(website)
       }
+    }
+
+    deleteWebsiteFunc(){
+      this.props.deleteWebsite(this.props.currentWebsite.id).then(() =>
+        this.props.history.push(`/`)
+      )
     }
 
   render() {
@@ -123,10 +129,12 @@ class WebsiteUpdateForm extends React.Component {
               type="submit" 
               value="Submit"
               />
-              <input className="session-delete website-create" />
             </p>
             </div>
           </form>
+          <button className="session-delete website-create"
+            onClick={this.deleteWebsiteFunc}
+            >DELETE WEBSITE</button>
         </div>
       );
     }
