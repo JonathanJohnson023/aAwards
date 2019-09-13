@@ -28,7 +28,7 @@ class WebsiteIndex extends React.Component {
       display = <div className="the-high-roller">
                   <div className="cover-art">
                     <Link to={`/websites/${this.props.topWebsite.id}`} className="the-content-link">
-                      <img className="high-roller-title" src={this.props.topWebsite.img_url} />
+                      <img className="high-roller-title" src={this.props.topWebsite.coverPhoto} />
                     </Link>
                     <div className="canvas" id="canvas"/>
                   </div>

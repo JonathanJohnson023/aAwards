@@ -44,3 +44,4 @@ export const fetchTopWebsite = () => (
   })
 );
 window.updateWebsite = updateWebsite
+window.fetchWebsites = fetchWebsites

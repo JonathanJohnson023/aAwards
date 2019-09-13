@@ -7,7 +7,7 @@ export default ({website}) => {
         <div className="the-meat-and">
           <figure className="the-figures">
           <Link to={`/websites/${website.id}`}>
-              <img src={website.img_url} className="website-index-img" />
+              <img src={website.thumbnailPhoto} className="website-index-img" />
           </Link>
           </figure>
           <div className="website-index-info">

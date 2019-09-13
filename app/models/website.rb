@@ -14,14 +14,16 @@
 #
 
 class Website < ApplicationRecord
-  validates :title, :url, :description, :img_url, presence: true
+  validates :title, :url, :description, presence: true
 
   belongs_to :user,
     primary_key: :id,
     foreign_key: :author_id,
     class_name: :User
 
-    has_many_attached :photos
+    has_many_attached :screenshot_photos
+    has_one_attached :cover_photo
+    has_one_attached :thumbnail_photo
 
   # def average_rating
   #   reviews.average(:rating)

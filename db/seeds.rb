@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 User.destroy_all
 Website.destroy_all
 
@@ -19,10 +21,15 @@ user = User.create([
   {email: "test@user.com", username:"User", password: "hunter12"}
   ])
 
+website0 = Website.create(title: "Trevor Uptain", url:"https://trevoruptain.com/", description:"Placeholder", author_id: user[0].id, score_avg: 10 )
+file0 = open("https://a-awards-dev.s3-us-west-1.amazonaws.com/TrevUp.png")
+website0.cover_photo.attach(io: file0, filename: 'TrevorLogo')
 
-  Website.create([
-    {title: "Trevor Uptain", url:"https://trevoruptain.com/", img_url:"https://lh3.googleusercontent.com/hyCQrqOQ1Rg_aFl1qGSLLUnd1hocAMYhwpkzuNnioHnsQA0HUZCD94G1A24GepKoHhUPbWb5D4wCDrNDys9ljaZKSGYyh9IXXPsZafORbtWiRRLnTzqz09kG2fbirZawTGD9evVgyl8KtdVwUws7Xwt9sMz_vLfvxEvi9gr_4Ux9HYSImFoTWhc1Xln05_Dcs4V5sRrvzUMhCOqBLzn0E1qerlkGPKA-VN3PSc4OHVBUhGK7DnBXfsrHUG_vpto3VJlfoVVqqYigpyxi451MBxYVShx4rplIwojGkPl_IiIFCj_kcvNf7G_jLYeytskLB1cTSe2KD5Eoab1hsNjBPllQZezebU5dYOqDcnvFQH8gw7avBAtJDakpovGhbA0MAhKhAfnKpknB-GINdho6pbzMRmQdF7k6zrP8QimR4hFoM2HNCD6gUKGhSZYrzBQ6jNoegDN-i39GlpsBo-gPpk8ys-PT8ZMe0qFhi_UZI3SWuW4mf8_4oewSJRxG5xeNartNv3uzPwNd7ioBsFoZWcQxF0ONLK9SyC9RUzZXKvyXSlExE59tnijyZrfirVE-8jPJMD7cG2rtRMK02pXO4xLJBGfTB78ZK01aZQvGuj9ISXmJUlsKFT9ZenI5rUhb9p0iWu2EP1YciE5C3gwiMogQbkAZjPpEE-P2KGFKG2cdRCkq_aZ_0Wo=w571-h64-no", description:"Placeholder", author_id: user[0].id, score_avg: 10 },
-    {title: "Picto-Gram", url:"https://picto-gram.herokuapp.com/#/", img_url:"https://i.imgur.com/U2cxTyP.jpg", description:"Placeholder", author_id: user[3].id},
-    {title: "LoudCloud", url:"https://the-loudcloud.herokuapp.com/#/", img_url:"https://donnie-loudcloud-prod.s3.us-east-2.amazonaws.com/cloud+copy.png", description:"Placeholder", author_id: user[2].id}
-  ])
+website1 = Website.create(title: "Picto-Gram", url:"https://picto-gram.herokuapp.com/#/", description:"Placeholder", author_id: user[3].id)
+file1 = open("https://a-awards-dev.s3-us-west-1.amazonaws.com/U2cxTyP.png")
+website1.thumbnail_photo.attach(io: file1, filename: 'Picto-Gram')
+
+website2 = Website.create(title: "LoudCloud", url:"https://the-loudcloud.herokuapp.com/#/", description:"Placeholder", author_id: user[2].id)
+file2 = open("https://a-awards-dev.s3-us-west-1.amazonaws.com/cloud+copy.png")
+website2.thumbnail_photo.attach(io: file2, filename: 'LoudCloud')
 

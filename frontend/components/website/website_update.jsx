@@ -10,7 +10,7 @@ class WebsiteUpdateForm extends React.Component {
             title: currentWebsite.title,
             url: currentWebsite.url,
             description: currentWebsite.description,
-            img_url: currentWebsite.img_url,
+            photo: currentWebsite.photo,
         };
 
 

@@ -28,12 +28,11 @@ class WebsiteShow extends React.Component {
       title = "the-hidden";
       <script>{particlesJS.load('canvas', `${window.particles}`, function(){})}</script>
     }
-    debugger
     return (
       <div className="the-full-show">
         <div className="the-high-roller">
           <div className="cover-art">
-            <img className={cover} src={website.img_url} />
+            <img className={cover} src={website.coverPhoto ? website.coverPhoto : website.thumbnailPhoto} />
             <a className={title} href={website.url} target="_blank" >{website.title}</a>
             <div className={particle} id={particle}/>
           </div>
