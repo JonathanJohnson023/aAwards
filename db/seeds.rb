@@ -25,11 +25,11 @@ website0 = Website.create(title: "Trevor Uptain", url:"https://trevoruptain.com/
 file0 = open("https://a-awards-dev.s3-us-west-1.amazonaws.com/TrevUp.png")
 website0.cover_photo.attach(io: file0, filename: 'TrevorLogo')
 
-website1 = Website.create(title: "Picto-Gram", url:"https://picto-gram.herokuapp.com/#/", description:"Placeholder", author_id: user[3].id)
+website1 = Website.create(title: "Picto-Gram", url:"https://picto-gram.herokuapp.com/#/", description:"Placeholder", author_id: user[3].id, score_avg: 4)
 file1 = open("https://a-awards-dev.s3-us-west-1.amazonaws.com/U2cxTyP.png")
 website1.thumbnail_photo.attach(io: file1, filename: 'Picto-Gram')
 
-website2 = Website.create(title: "LoudCloud", url:"https://the-loudcloud.herokuapp.com/#/", description:"Placeholder", author_id: user[2].id)
+website2 = Website.create(title: "LoudCloud", url:"https://the-loudcloud.herokuapp.com/#/", description:"Placeholder", author_id: user[2].id, score_avg: 5)
 file2 = open("https://a-awards-dev.s3-us-west-1.amazonaws.com/cloud+copy.png")
 website2.thumbnail_photo.attach(io: file2, filename: 'LoudCloud')
 

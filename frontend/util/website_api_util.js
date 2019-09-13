@@ -24,7 +24,9 @@ export const createWebsite = website => (
   $.ajax({
     method: 'POST',
     url: '/api/websites',
-    data: { website }
+    data: { website },
+    contentType: false,
+    processData: false
   })
 );
 
@@ -33,6 +35,8 @@ export const updateWebsite = website => (
     method: "PATCH",
     url:  `/api/websites/${website.id}`,
     data: {website},
+    contentType: false,
+    processData: false
  })
 )
 

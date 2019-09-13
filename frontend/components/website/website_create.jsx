@@ -7,10 +7,11 @@ class WebsiteForm extends React.Component {
         title: "",
         url: "",
         description: "",
-        img_url: "",
         author_id: this.props.currentUser.id,
-        score_avg: 5,
-        errors: []
+        score_avg: 0,
+        cover: "",
+        thumbnail: "",
+        screenshots: ""
     };
     
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -93,7 +94,7 @@ class WebsiteForm extends React.Component {
                 <li className="create-website-lis">
                   <label className="create-website-lables">The Image URL for your site</label>
                     <input className="create-website-input"
-                      type="text" 
+                      type="file" 
                       value={this.state.img_url} 
                       onChange={this.update('img_url')} 
                       // placeholder="Image URL"
