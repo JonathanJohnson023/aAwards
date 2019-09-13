@@ -19,6 +19,7 @@ class WebsiteIndex extends React.Component {
       <script>{particlesJS.load('canvas', `${window.particles}`, function(){})}</script>
     }
   }
+  
   render() {
     let display;
     if(!this.props.topWebsite){
@@ -28,7 +29,7 @@ class WebsiteIndex extends React.Component {
       display = <div className="the-high-roller">
                   <div className="cover-art">
                     <Link to={`/websites/${this.props.topWebsite.id}`} className="the-content-link">
-                      <img className="high-roller-title" src={this.props.topWebsite.coverPhoto} />
+                      <img className="high-roller-title" src={this.props.topWebsite.cover} />
                     </Link>
                     <div className="canvas" id="canvas"/>
                   </div>

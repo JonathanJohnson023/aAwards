@@ -5,6 +5,7 @@
 .the-high-roller{
   height: 500px;
   width: 100%;
+  background: rgba(0, 0, 0, 1);
 }
 
 .the-index-header{
@@ -90,15 +91,10 @@
   padding: 13px;
 }
 
-.the-high-roller{
-  background-image: linear-gradient(120deg,#89f7fe 0,#4676fa 100%);
-}
-
 .cover-art{
   display: flex;
   height: 100%;
   width: 100%;
-  background: linear-gradient(120deg, #89f7fe 0, #4676fa 100%);
   justify-content: center;
   align-items: center;
 }

@@ -18,6 +18,7 @@ class WebsiteShow extends React.Component {
         <div></div>
       )
     }
+    
     const {website, currentUser, topWebsite} = this.props
     let particle = "the-hidden"
     let cover = "show-website-cover"
@@ -30,9 +31,9 @@ class WebsiteShow extends React.Component {
     }
     return (
       <div className="the-full-show">
-        <div className="the-high-roller">
+        <div className="the-high-roller show-page">
           <div className="cover-art">
-            <img className={cover} src={website.coverPhoto ? website.coverPhoto : website.thumbnailPhoto} />
+            <img className={cover} src={website.cover ? website.cover : website.thumbnail} />
             <a className={title} href={website.url} target="_blank" >{website.title}</a>
             <div className={particle} id={particle}/>
           </div>

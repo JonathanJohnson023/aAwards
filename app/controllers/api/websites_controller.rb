@@ -14,6 +14,7 @@ class Api::WebsitesController < ApplicationController
 
   def create
     @website = Website.new(website_params)
+    
     if @website.save
       render :show
     else
@@ -23,7 +24,6 @@ class Api::WebsitesController < ApplicationController
 
   def update
     @website = Website.find_by(id: params[:id])
-  
     if current_user.id == @website.author_id
       @website.update(website_params)
       render :show
@@ -46,7 +46,7 @@ class Api::WebsitesController < ApplicationController
 
   private
     def website_params
-      params.require(:website).permit( :title, :url, :description, :author_id, :thumbnail_photo, :cover_photo, :screenshot_photos )
+      params.require(:website).permit(:title, :url, :description, :author_id, :thumbnail_photo, :cover_photo, screenshot_photos: [] )
     end
   
   

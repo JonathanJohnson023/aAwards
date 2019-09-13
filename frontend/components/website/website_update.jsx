@@ -4,13 +4,15 @@ import { withRouter } from 'react-router-dom';
 class WebsiteUpdateForm extends React.Component {
     constructor(props) {
         super(props);
-        let { currentWebsite, currentUser } = this.props;
         this.state = {
-            id: currentWebsite.id,
-            title: currentWebsite.title,
-            url: currentWebsite.url,
-            description: currentWebsite.description,
-            photo: currentWebsite.photo,
+          title: "",
+          url: "",
+          description: "",
+          author_id: this.props.currentUser.id,
+          cover: null,
+          thumbnail: null,
+          screenshots: null,
+          coverUrl: null
         };
 
 
@@ -19,36 +21,70 @@ class WebsiteUpdateForm extends React.Component {
         this.update =  this.update.bind(this)
     }
 
-  handleSubmit(e) {
+    handleSubmit(e) {
       e.preventDefault();
-      // if (this.props.currentUser.email ===  "test@user.com") {
-      //   window.alert("Unable to modify the demo user. Please try making a new account to test out this feature!")
-      // }
-      const form = Object.assign({}, this.state);
-      this.props.updateWebsite(form)
-        .then(payload => {
-        this.props.history.push(`/websites/${payload.website.id}`)
+      const formData = new FormData();
+      formData.append('website[title]', this.state.title);
+      formData.append('website[url]', this.state.url);
+      formData.append('website[description]', this.state.description);
+      formData.append('website[author_id]', this.state.author_id);
+      if(this.state.cover) formData.append('website[cover_photo]', this.state.cover);
+      if(this.state.thumbnail)formData.append('website[thumbnail_photo]', this.state.thumbnail);
+      if(this.state.screenshots)formData.append('website[screenshot_photos]', this.state.screenshots);
+      console.log(formData)
+      this.props.updateWebsite(formData, this.props.currentWebsite.id).then(ele => {
+        this.props.history.push(`/websites/${ele.website.id}`)
       })
   };
-
   update(type) {
     return (e) => {
         this.setState({ [type]: e.target.value });
     };
   }
 
-    handleCancel(e) {
+    handleCancel(e){
         e.preventDefault();
         this.props.history.push(`/webiste/${this.props.currentWebsite.id}`);
     }
 
+    componentDidMount(){
+      this.props.fetchWebsite()
+    }
+
+    componentDidUpdate(prevProps){
+      if(prevProps.match.params.websiteId !== this.props.match.params.websiteId)
+        this.props.fetchWebsite()
+      if(!prevProps.currentWebsite && this.props.currentWebsite){
+        let website = Object.assign({}, this.props.currentWebsite)
+        delete website.cover
+        delete website.screenshots
+        delete website.thumbnail
+        this.setState(website)
+      }
+    }
 
   render() {
+    if(!(this.props.currentWebsite)){
+      return (
+        <div></div>
+      )
+    }
+
+    let {currentUser, currentWebsite} = this.props
+    let cover = "show-website-cover"
+    let title = "show-title"
+
     return (
       <div className="website-submission">
         <form className="website-create-form" onSubmit={this.handleSubmit}>
           <div className="create-website-header">
             <h2>Update Your Website</h2>
+          </div>
+          <div className="the-high-roller">
+            <div className="cover-art">
+              <img className={cover} src={currentWebsite.cover ? currentWebsite.cover : currentWebsite.thumbnail} />
+              <a className={title} href={currentWebsite.url} target="_blank" >{currentWebsite.title}</a>
+            </div>
           </div>
           <div className="create-wrapper">
 
@@ -79,15 +115,6 @@ class WebsiteUpdateForm extends React.Component {
                       onChange={this.update('description')} 
                       // placeholder="Website Description"
                     />
-                </li>
-                <li className="create-website-lis">
-                  <label className="create-website-lables">The Image URL for your site</label>
-                    <input className="create-website-input"
-                      type="text" 
-                      value={this.state.img_url} 
-                      onChange={this.update('img_url')} 
-                      // placeholder="Image URL"
-                    />             
                 </li>
               </ul>
             </div>

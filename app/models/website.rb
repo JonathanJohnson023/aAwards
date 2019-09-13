@@ -15,6 +15,11 @@
 
 class Website < ApplicationRecord
   validates :title, :url, :description, presence: true
+  # validate :ensure_screenshot_photos 
+
+  # def ensure_screenshot_photos
+  #   errors[:screenshot_photos].push("An array of photos are recuired ") unless self.screenshot_photos.attached?
+  # end
 
   belongs_to :user,
     primary_key: :id,
