@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import WebsiteUpdateForm from "./website_update";
-import {updateWebsite, fetchWebsite, } from "../../actions/website_actions"
+import {updateWebsite, fetchWebsite, deleteWebsite} from "../../actions/website_actions"
 
 const mapStateToProps = (state, ownProps) => {
     const currentUser = state.entities.users[state.session.id]
@@ -13,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchWebsite: () => dispatch(fetchWebsite(parseInt(ownProps.match.params.websiteId))),
+  deleteWebsite: () => dispatch(deleteWebsite()),
   updateWebsite: (website, id) => dispatch(updateWebsite(website, id))
 });
 

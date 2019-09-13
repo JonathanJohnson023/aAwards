@@ -123,6 +123,7 @@ class WebsiteUpdateForm extends React.Component {
               type="submit" 
               value="Submit"
               />
+              <input className="session-delete website-create" />
             </p>
             </div>
           </form>

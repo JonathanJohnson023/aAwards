@@ -79,9 +79,9 @@ class WebsiteForm extends React.Component {
       formData.append('website[url]', this.state.url);
       formData.append('website[description]', this.state.description);
       formData.append('website[author_id]', this.state.author_id);
-      formData.append('website[cover_photo]', this.state.cover);
-      formData.append('website[thumbnail_photo]', this.state.thumbnail);
-      formData.append('website[screenshot_photos]', this.state.screenshots);
+      if(this.state.cover) formData.append('website[cover_photo]', this.state.cover);
+      if(this.state.thumbnail)formData.append('website[thumbnail_photo]', this.state.thumbnail);
+      if(this.state.screenshots)formData.append('website[screenshot_photos]', this.state.screenshots);
       console.log(formData)
       this.props.createWebsite(formData).then(ele => {
         this.props.history.push(`/websites/${ele.website.id}`)
@@ -98,7 +98,7 @@ class WebsiteForm extends React.Component {
 
   render() {
 
-    const previewCover = this.state.coverUrl ? <img className='image-preview-cover' src={this.state.coverUrl} /> : <img className='image-preview' height='540px' width='540px' />;
+    const previewCover = this.state.coverUrl ? <img className='image-preview-cover' src={this.state.coverUrl} /> : <img className='image-preview-cover' />;
 
     return (
       <div className="website-submission">
@@ -107,7 +107,6 @@ class WebsiteForm extends React.Component {
             <h2>Website Submission</h2>
           </div>
           <div className="create-wrapper">
-            
             <div className="website-create-input-fields">
               <ul className="create-website-ul">
                 <li className="create-website-lis">
@@ -137,32 +136,29 @@ class WebsiteForm extends React.Component {
                     />
                 </li>
                 <li className="create-website-lis">
-                  <label className="create-website-lables">The Image URL for your site</label>
-                    <input className="create-website-input"
+                  <label className="create-website-file-lables">This Image will be displayed as your Banner</label>
+                    <input className="create-website-files"
                       type="file" 
                       onChange={this.handleFileCover} 
                       // placeholder="Image URL"
-                    />             
-                    <div className='image-preview-cover'>
-                        <div className='image-cover'>{previewCover}</div>
-                    </div>            
+                    />                       
                 </li>
                 <li className="create-website-lis">
-                  <label className="create-website-lables">The Image URL for your site</label>
-                    <input className="create-website-input"
+                  <label className="create-website-file-lables">This Image will be your websites thumbnail</label>
+                    <input className="create-website-files"
                       type="file" 
                       onChange={this.handleFileThumbnail} 
                       // placeholder="Image URL"
                     /> 
                 </li>
-                <li className="create-website-lis">
+                {/* <li className="create-website-lis">
                   <label className="create-website-lables">The Image URL for your site</label>
-                    <input className="create-website-input"
+                    <input className="create-website-files"
                       type="file" 
                       onChange={this.handleFileScreenshots} 
                       // placeholder="Image URL"
                     />             
-                </li>
+                </li> */}
               </ul>
               {this.renderErrors()}
             </div>
@@ -172,6 +168,9 @@ class WebsiteForm extends React.Component {
             value="Submit"
             />
           </p>
+          {/* <div className='image-preview-cover'>
+              <div className='image-cover'>{previewCover}</div>
+          </div>   */}
           </div>
         </form>
      </div>

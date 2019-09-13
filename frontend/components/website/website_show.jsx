@@ -20,22 +20,24 @@ class WebsiteShow extends React.Component {
     }
     
     const {website, currentUser, topWebsite} = this.props
-    let particle = "the-hidden"
+    // let particle = "the-hidden"
+    let particle = "canvas";
     let cover = "show-website-cover"
     let title = "show-title"
     if(website.id === topWebsite.id){
-      particle = "canvas";
       cover = "high-roller-title";
       title = "the-hidden";
-      <script>{particlesJS.load('canvas', `${window.particles}`, function(){})}</script>
     }
+    <script>{particlesJS.load('canvas-left', `${window.particles}`, function(){})}
+    {particlesJS.load('canvas-right', `${window.particles}`, function(){})}</script>
     return (
       <div className="the-full-show">
         <div className="the-high-roller show-page">
           <div className="cover-art">
+            <div className="canvas-left" id="canvas-left"/>
             <img className={cover} src={website.cover ? website.cover : website.thumbnail} />
             <a className={title} href={website.url} target="_blank" >{website.title}</a>
-            <div className={particle} id={particle}/>
+            <div className='canvas-right' id='canvas-right'/>
           </div>
           <a href={website.url} target="_blank" className="cover-button-botleft">
             <span className="bottom-left-a-tag">Visit Site</span>

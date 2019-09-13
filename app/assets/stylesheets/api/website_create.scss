@@ -57,13 +57,9 @@
   clear: both;
 }
 
-.create-website-ul > li > label {
-  display: flex;
-  box-sizing: border-box;
-  width: 28%;
-  height: 60px;
-  align-items: center;
-}
+// .create-website-ul > li > label {
+
+// }
 
 .create-website-lis{
   box-sizing: border-box;
@@ -74,6 +70,11 @@
 .create-website-lables{
   box-sizing: border-box;
   margin: 7px 0;
+  display: flex;
+  box-sizing: border-box;
+  width: 28%;
+  height: 60px;
+  align-items: center;
 }
 
 .create-website-input{
@@ -101,4 +102,17 @@
   width: 70%;
   display: inline-block;
   max-width: 918px;
+}
+
+.create-website-files{
+  display: flex;
+  align-self: center;
+}
+
+.create-website-file-lables{
+  display: flex;
+  box-sizing: border-box;
+  width: 50%;
+  height: 60px;
+  align-items: center;
 }
