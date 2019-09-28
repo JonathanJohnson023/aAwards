@@ -16,3 +16,8 @@ a/Awards is a website sharing service used to create, browse, and modify the cor
 <h2>Author</h2>
 Jonathan Johnson
 email: @JonathanJohnson023@gmail.com
+
+----Bullet points ----
+* After mounting the home page using the website index component having to remove the div's that were no longer needed for the sole websites index page
+* I frequently had issues of components breaking on refresh because their state/ props no longer existed and learning how to re-pass through the container so they have the proper dependencies
+*seeing difficult features and compartmentalizing them into smaller pieces to chip away at them the best example is my side nav that pushes the whole webpage a difficult task at face value but broken down and bigger picture is much more simplistic
