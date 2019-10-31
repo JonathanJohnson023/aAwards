@@ -7,12 +7,12 @@ export default ({ user, logout, openModal, openSideNav }) => {
   if (user) {
     display = {
             link1: <Link className="user-page" to={`/api/user/${user.id}`}><span >{user.username ? `Welcome, ${user.username}` : user.email }</span></Link>,
-            link2: <a onClick={logout}>Logout</a>
+            link2: <li className="link2" onClick={logout}><a>Logout</a></li>
     }
    } else{ 
      display = {
-         link1: <a className="btn" onClick={()=> openModal('signup')}>Signup</a>,
-         link2: <a className="btn" onClick={()=> openModal('login')}>Login</a>
+         link1:  <li className="link1" onClick={()=> openModal('signup')}><a className="btn">Signup</a></li>,
+         link2:  <li className="link2" onClick={()=> openModal('login')}><a className="btn">Login</a></li>
      }
     }
 
@@ -44,8 +44,8 @@ export default ({ user, logout, openModal, openSideNav }) => {
             </div>
             <div className="user-stuff">
               <ul className="username-email">
-                <li className="link1">{display.link1}</li>
-                <li className="link2">{display.link2}</li>
+                {display.link1}
+                {display.link2}
               </ul>
               
               {user ?
