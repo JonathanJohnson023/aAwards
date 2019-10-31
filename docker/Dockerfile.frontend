@@ -9,4 +9,7 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
 RUN npm install --silent
 
-CMD ["npm", "start"
+COPY . /usr/src/app
+
+
+RUN npm run postinstall

@@ -4,6 +4,7 @@
 # you usually don't want dockerfile and compose files in the image either
 
 *docker-compose*
+Dockerfile
 
 # for Node.js apps, you want to build the node_modules in the image, and not copy from host
 node_modules
@@ -18,11 +19,11 @@ node_modules
 !/tmp/.keep
 
 
+.DS_Store
+npm-debug.log
 .byebug_history
 bundle.js
 bundle.js.map
-.DS_Store
-npm-debug.log
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
