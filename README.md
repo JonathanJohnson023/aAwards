@@ -5,8 +5,8 @@ a/Awards is a website sharing social platform used to display, browse, discuss a
 
 ## Technologies
 * [React](https://reactjs.org/) / [Redux](https://redux.js.org/) / [JavaScript](https://www.javascript.com/): Framework
-* Ruby on Rails: Backend
-* PostgreSQL and AWS: Database / User Storage / File upload
+* [Ruby on Rails](https://rubyonrails.org/): Backend
+* [PostgreSQL](https://www.postgresql.org/) and [AWS](https://aws.amazon.com/): Database / User Storage / File upload
   
 <div><img src="https://github.com/JonathanJohnson23/aAwards/blob/master/take2.gif" alt="Demo login" /></div>
 <div><img src="https://github.com/JonathanJohnson23/aAwards/blob/master/take1.gif" alt="Demo login" /></div>
