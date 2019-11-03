@@ -8,6 +8,9 @@ a/Awards is a website sharing social platform used to display, browse, discuss a
 * Ruby on Rails: Backend
 * PostgreSQL and AWS: Database / User Storage / File upload
   
+<div><img src="https://github.com/JonathanJohnson23/aAwards/blob/master/take2.gif" alt="Demo login" /></div>
+<div><img src="https://github.com/JonathanJohnson23/aAwards/blob/master/take1.gif" alt="Demo login" /></div>
+<div><img src="https://github.com/JonathanJohnson23/aAwards/blob/master/take0.gif" alt="Demo login" /></div>
 
   
 <h2>Author</h2>
