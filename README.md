@@ -10,6 +10,8 @@ a/Awards is a website sharing social platform used to display, browse, discuss a
   
 <div><img src="https://github.com/JonathanJohnson23/aAwards/blob/master/take2.gif" alt="Demo" /></div>
 
+The modal is a functional component that receives props through dispatch requests. It overlays the website and displays either signup or login and can swap between the two. Other components can dispatch an action with the props "signup" or "login," and the modal will then load the proper component depending on those props.
+
 ```js
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -38,6 +40,7 @@ function Modal({modal, closeModal}) {
 ```
 <div><img src="https://github.com/JonathanJohnson23/aAwards/blob/master/take1.gif" alt="Demo" /></div>
 
+The user model is the core of the functionality for **authentication** and **bootstrapping** the user. By adding a session token to cookies and allowing token lookup, it provides seamless and secure login and bootstrap
 
 ```ruby
 def self.find_by_credentials(email, password)
