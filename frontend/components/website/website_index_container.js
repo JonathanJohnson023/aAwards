@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state, ownprops) => {
   const topWebsite = state.ui.helpers.topWebsite
   const websites = Object.values(state.entities.websites)
+  // debugger
   return ({
     topWebsite,
     websites

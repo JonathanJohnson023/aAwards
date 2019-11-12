@@ -140,4 +140,4 @@ class WebsiteUpdateForm extends React.Component {
     }
 }
 
-export default WebsiteUpdateForm;
+export default withRouter(WebsiteUpdateForm);

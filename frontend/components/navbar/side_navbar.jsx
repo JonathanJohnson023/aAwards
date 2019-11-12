@@ -27,8 +27,8 @@ function SideNav(props) {
         <div className="das-side-links">
           <Link to="/"><span onClick={toggleNav} className="side-nav-item" id="home">Home</span></Link>
           <Link to="/websites"><span onClick={toggleNav} className="side-nav-item">Websites</span></Link>
-          <Link to=""><span onClick={toggleNav} className="side-nav-item">Vote</span></Link>
-          <Link to=""><span onClick={toggleNav} className="side-nav-item">Jobs && Talent</span></Link>
+          <span onClick={toggleNav} className="side-nav-item in-progress">Vote</span> {/* <Link to=""></Link> */}
+          <span onClick={toggleNav} className="side-nav-item in-progress">Jobs && Talent</span> {/* <Link to=""></Link> */}
         </div>
       </div>
     </div>

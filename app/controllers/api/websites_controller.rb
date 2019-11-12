@@ -37,7 +37,7 @@ class Api::WebsitesController < ApplicationController
     @website = Website.find(params[:id])
     if current_user.id == @website.user.id
       @website.destroy
-      render :index
+      # render :index
     else
       render json: ["idk something messed up"], status: 422
     end

@@ -7,24 +7,26 @@ class WebsiteIndex extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     
     this.props.fetchWebsites()
-    this.props.fetchTopWebsite()
-      // particlesJS.load('canvas', `${window.particles}`, function(){})
-      // ).then()
-  }
-  componentDidUpdate(){
+    await this.props.fetchTopWebsite()
     if(this.props.history.location.pathname !== "/websites"){
+      // particlesJS.load('canvas', `${window.particles}`, function(){})
       <script>{particlesJS.load('canvas', `${window.particles}`, function(){})}</script>
     }
   }
+
+  componentDidUpdate(prevProps){
+    if(prevProps.match.path === "/websites" && this.props.match.path === "/"){
+      <script>{particlesJS.load('canvas', `${window.particles}`, function(){})}</script>
+    }
+  }
+
   
   render() {
     let display;
-    if(!this.props.topWebsite){
-      this.props.fetchTopWebsite()
-    }
+
     if(this.props.history.location.pathname !== "/websites" && this.props.topWebsite){
       display = <div className="the-high-roller">
                   <div className="cover-art">
