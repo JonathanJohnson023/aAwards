@@ -66,3 +66,34 @@
 .the-high-roller{
   background: rgba(0, 0, 0, 1);
 }
+.chart {
+  width: 160px;
+  font-family: "apercu",sans-serif;
+  height: 160px;
+  margin: 0 auto 40px auto;
+  position: absolute;
+  text-align: center;
+  z-index: 5;
+  margin-top: 50px;
+  font-size: 25px;
+  color: white;
+}
+.chart span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -30px;
+  width: 100%;
+}
+.chart span strong {
+  display: block;
+}
+.chart canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#chart-bottom{
+  bottom: 0;
+  margin-top: 95px;
+}

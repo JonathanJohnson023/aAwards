@@ -11,9 +11,20 @@ class WebsiteIndex extends React.Component {
     
     this.props.fetchWebsites()
     await this.props.fetchTopWebsite()
+    var element = document.querySelector('.chart');
     if(this.props.history.location.pathname !== "/websites"){
       // particlesJS.load('canvas', `${window.particles}`, function(){})
-      <script>{particlesJS.load('canvas', `${window.particles}`, function(){})}</script>
+      <script>{particlesJS.load('canvas', `${window.particles}`, function(){})}
+       { new EasyPieChart(element, {
+        scaleColor: false,
+        lineWidth: 4,
+        lineCap: 'butt',
+        barColor: '#2F3C4F',
+        trackColor:	"#f5f5f5",
+        size: 160,
+        animate: 1000
+      })}
+      </script>
     }
   }
 
@@ -26,13 +37,20 @@ class WebsiteIndex extends React.Component {
   
   render() {
     let display;
-
+    let rating;
+    if( this.props.topWebsite){
+      rating = this.props.topWebsite.score_avg + '0'
+    }
     if(this.props.history.location.pathname !== "/websites" && this.props.topWebsite){
       display = <div className="the-high-roller">
                   <div className="cover-art">
                     <Link to={`/websites/${this.props.topWebsite.id}`} className="the-content-link">
                       <img className="high-roller-title" src={this.props.topWebsite.cover} />
                     </Link>
+                    <div className="chart" data-percent={rating}>
+                      <span>{`${this.props.topWebsite.score_avg}.0`}</span>
+                      <span id="chart-bottom">Score Average</span>
+                    </div>
                     <div className="canvas" id="canvas"/>
                   </div>
                   <strong className="the-index-fav">Highest Scored Website</strong>

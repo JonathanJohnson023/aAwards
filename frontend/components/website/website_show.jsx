@@ -11,15 +11,27 @@ class WebsiteShow extends React.Component {
   async componentDidMount() {
     await this.props.fetchWebsite();
     await this.props.fetchTopWebsite();
-    <script>{particlesJS.load('canvas-left', `${window.particles}`, function(){})}
-    {particlesJS.load('canvas-right', `${window.particles}`, function(){})}</script>
+    var element = document.querySelector('.chart');
+    <script>
+    {particlesJS.load('canvas-left', `${window.particles}`, function(){})}
+    {particlesJS.load('canvas-right', `${window.particles}`, function(){})}
+     { new EasyPieChart(element, {
+        scaleColor: false,
+        lineWidth: 4,
+        lineCap: 'butt',
+        barColor: '#2F3C4F',
+        trackColor:	"#f5f5f5",
+        size: 160,
+        animate: 1000
+      })}
+    </script>
   }
 
   render () {
     let particle = "canvas";
     let cover = "show-website-cover"
     let title = "show-title"
-
+    let rating;
     if(!this.props.topWebsite){
       this.props.fetchTopWebsite()
     }
@@ -33,6 +45,7 @@ class WebsiteShow extends React.Component {
     const {website, currentUser, topWebsite} = this.props
     // let particle = "the-hidden"
     if( website && topWebsite){
+      rating = website.score_avg + '0'
       if(website.id === topWebsite.id){
         cover = "high-roller-title";
         title = "the-hidden";
@@ -43,6 +56,10 @@ class WebsiteShow extends React.Component {
         <div className="the-high-roller show-page">
           <div className="cover-art">
             <div className="canvas-left" id="canvas-left"/>
+            <div className="chart" data-percent={rating}>
+              <span>{`${website.score_avg}.0`}</span>
+              <span id="chart-bottom">Score Average</span>
+            </div>
             <img className={cover} src={website.cover ? website.cover : website.thumbnail} />
             <a className={title} href={website.url} target="_blank" >{website.title}</a>
             <div className='canvas-right' id='canvas-right'/>
@@ -59,6 +76,7 @@ class WebsiteShow extends React.Component {
         <div className="show-body">
           <p className="show-description">{website.description}</p>
         </div>
+        
         <div className="website-show-direction">
         </div>
       </div>

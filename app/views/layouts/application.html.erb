@@ -8,6 +8,8 @@
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag asset_path('tab-icon.png') %>
     <%# asset_path 'particles.json' %>
+    <%# asset_path 'easypiechart.js' %>
+
 
     <% if logged_in? %>
       <script>
@@ -26,10 +28,9 @@
       window.TrevUp = "<%= asset_path('TrevUp.png') %>"
       window.headerLogo = "<%= asset_path('take2-of-logo.png') %>"
     </script>
-
+  <script src='<%= asset_path("easypiechart.js") %>'></script>
   </head>
   <body>
- 
 
     <%= yield %>
   </body>
