@@ -3,16 +3,27 @@ import { Link } from 'react-router-dom';
 import { setPriority } from 'os';
 
 class WebsiteShow extends React.Component {
+  constructor(props){
+    super(props)
 
-  componentDidMount() {
-    this.props.fetchWebsite();
-    this.props.fetchTopWebsite()
+  }
+
+  async componentDidMount() {
+    await this.props.fetchWebsite();
+    await this.props.fetchTopWebsite();
+    <script>{particlesJS.load('canvas-left', `${window.particles}`, function(){})}
+    {particlesJS.load('canvas-right', `${window.particles}`, function(){})}</script>
   }
 
   render () {
+    let particle = "canvas";
+    let cover = "show-website-cover"
+    let title = "show-title"
+
     if(!this.props.topWebsite){
       this.props.fetchTopWebsite()
     }
+    
     if(!(this.props.website)){
       return (
         <div></div>
@@ -21,15 +32,12 @@ class WebsiteShow extends React.Component {
     
     const {website, currentUser, topWebsite} = this.props
     // let particle = "the-hidden"
-    let particle = "canvas";
-    let cover = "show-website-cover"
-    let title = "show-title"
-    if(website.id === topWebsite.id){
-      cover = "high-roller-title";
-      title = "the-hidden";
+    if( website && topWebsite){
+      if(website.id === topWebsite.id){
+        cover = "high-roller-title";
+        title = "the-hidden";
+      }
     }
-    <script>{particlesJS.load('canvas-left', `${window.particles}`, function(){})}
-    {particlesJS.load('canvas-right', `${window.particles}`, function(){})}</script>
     return (
       <div className="the-full-show">
         <div className="the-high-roller show-page">

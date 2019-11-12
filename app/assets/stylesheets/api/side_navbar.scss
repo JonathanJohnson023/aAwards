@@ -74,6 +74,10 @@
   transition: background 0.3s ease-in-out;
 }
 
+.side-nav-item.in-progress{
+  cursor: not-allowed;
+}
+
 #home{
   border-top: 1px solid #E6EAEA;
 }
