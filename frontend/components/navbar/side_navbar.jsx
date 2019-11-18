@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import {closeSide} from "../../actions/modal_actions";
 import {Link} from "react-router-dom";
+import { openModal } from "../../actions/modal_actions";
 
 function SideNav(props) {
   let showEle = "hide"
@@ -9,10 +10,12 @@ function SideNav(props) {
     showEle = "show"
   }
 
-  const toggleNav = () =>{
+  const toggleNav = (modal) =>{
+    // debugger
     props.closeNav()
     const main = document.getElementById("main")
     main.classList.remove("move")
+    if(modal) props.openModal(modal)
   }
 
   return(
@@ -27,8 +30,9 @@ function SideNav(props) {
         <div className="das-side-links">
           <Link to="/"><span onClick={toggleNav} className="side-nav-item" id="home">Home</span></Link>
           <Link to="/websites"><span onClick={toggleNav} className="side-nav-item">Websites</span></Link>
-          <span className="side-nav-item in-progress">Vote</span> {/* <Link to=""></Link> */}
-          <span className="side-nav-item in-progress">Jobs && Talent</span> {/* <Link to=""></Link> */}
+          <span className="side-nav-item in-progress"  onClick={() => toggleNav("vote")}>Vote</span> {/* <Link to=""></Link> */}
+          <span className="side-nav-item in-progress"  onClick={() => toggleNav("jobs && talent")}>Jobs && Talent</span> {/* <Link to=""></Link> */}
+          <span onClick={() => toggleNav("credits")} className="side-nav-item">Credits</span>
         </div>
       </div>
     </div>
@@ -45,6 +49,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     closeNav: () => dispatch(closeSide()),
+    openModal: (theCase) => dispatch(openModal(theCase))
   };
 };
 

@@ -17,6 +17,28 @@ function Modal({modal, closeModal}) {
     case 'signup':
       component = <SignupFormContainer />;
       break;
+    case "credits":
+      component = <div className="modal open">
+          <div className="modal-session-form">
+            <a href="https://github.com/JonathanJohnson23" target="_blank">github</a>
+            <a href="https://www.linkedin.com/in/jonathan-johnson-070807195/" target="_blank">linkedin</a>
+          </div>
+        </div>
+      break;
+    case "vote":
+      component = <div className="modal open">
+        <div className="modal-session-form">
+          <h1>coming soon</h1>
+        </div>
+      </div>
+      break;
+    case "jobs && talent":
+      component = <div className="modal open">
+        <div className="modal-session-form">
+          <h1>coming soon</h1>
+        </div>
+      </div>
+      break;
     default:
       return null;
   }

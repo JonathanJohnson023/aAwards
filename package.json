@@ -20,7 +20,7 @@
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7"
   },
-  "description": "My first full stack is a copy of the AAwards.com website",
+  "description": "My first full stack is a copy of the Awwwards.com website",
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
